@@ -15,3 +15,5 @@
 Cronograma de actividades, teniendo como Semana 1 la que inicia el 23 de septiembre de 2019, y siendo la Semana 7 la que finaliza el 1 de Noviembre de 2019:
 ![alt text](https://i.imgur.com/sR48VUJ.png)
 Cualquier duda o sugerencia con el cronograma o los requerimientos, comentar por el canal general de Slack.
+
+.
