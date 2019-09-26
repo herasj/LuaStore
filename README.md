@@ -16,3 +16,14 @@ Cronograma de actividades, teniendo como Semana 1 la que inicia el 23 de septiem
 ![alt text](https://i.imgur.com/sR48VUJ.png)
 Cualquier duda o sugerencia con el cronograma o los requerimientos, comentar por el canal general de Slack.
 
+## Front End
+Para visualizar lo que corresponde a Front end:
+1. Asegurarse de tener descargado la branch **frontEnd** de github.
+2. Abrir una consola en la carpeta /frontEnd del proyecto y ejecutar:
+
+    > npm install && ng serve
+  
+3. Cuando el servidor de Angular esté corriendo pueden ver la pagina en: http://localhost:4200  
+
+
+_Nota: se presupone que tiene instalado Node.js en su computador_
