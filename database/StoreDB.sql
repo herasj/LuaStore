@@ -1,3 +1,6 @@
+-- Created by Vertabelo (http://vertabelo.com)
+-- Last modification date: 2019-09-25 14:05:19.142
+
 -- tables
 -- Table: Compras
 CREATE TABLE Compras (
@@ -19,12 +22,6 @@ CREATE TABLE Envios (
     Costo int  NOT NULL,
     CompraID int  NOT NULL,
     CONSTRAINT Envios_pk PRIMARY KEY (Tracking)
-);
-
--- Table: Fotos
-CREATE TABLE Fotos (
-    productID int  NOT NULL,
-    fotoURL varchar(50)  NOT NULL
 );
 
 -- Table: Join_Product_Compra
@@ -49,6 +46,7 @@ CREATE TABLE Productos (
     Descripcion varchar(100)  NOT NULL,
     Precio int  NOT NULL,
     Dcto int  NOT NULL,
+    fotoURL varchar(100)  NOT NULL,
     Categoria varchar(50)  NOT NULL,
     Subcategoria varchar(50)  NOT NULL,
     Marca varchar(50)  NOT NULL,
@@ -58,7 +56,9 @@ CREATE TABLE Productos (
 -- Table: Shopping_Cart
 CREATE TABLE Shopping_Cart (
     userID int  NOT NULL,
-    productID int  NOT NULL
+    productID int  NOT NULL,
+    ShopID int  NOT NULL,
+    CONSTRAINT Shopping_Cart_pk PRIMARY KEY (ShopID)
 );
 
 -- Table: Usuarios
@@ -72,12 +72,6 @@ CREATE TABLE Usuarios (
     Key varchar(50)  NOT NULL,
     Coins int  NOT NULL,
     CONSTRAINT Usuarios_pk PRIMARY KEY (userID)
-);
-
--- Table: WhishList
-CREATE TABLE WhishList (
-    userID int  NOT NULL,
-    productID int  NOT NULL
 );
 
 -- foreign keys
@@ -101,14 +95,6 @@ ALTER TABLE Compras ADD CONSTRAINT Compras_Pago
 ALTER TABLE Envios ADD CONSTRAINT Envios_Compras
     FOREIGN KEY (CompraID)
     REFERENCES Compras (compraID)  
-    NOT DEFERRABLE 
-    INITIALLY IMMEDIATE
-;
-
--- Reference: Fotos_Productos (table: Fotos)
-ALTER TABLE Fotos ADD CONSTRAINT Fotos_Productos
-    FOREIGN KEY (productID)
-    REFERENCES Productos (productID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
@@ -147,22 +133,6 @@ ALTER TABLE Shopping_Cart ADD CONSTRAINT Shopping_Cart_Productos
 
 -- Reference: Shopping_Cart_Usuarios (table: Shopping_Cart)
 ALTER TABLE Shopping_Cart ADD CONSTRAINT Shopping_Cart_Usuarios
-    FOREIGN KEY (userID)
-    REFERENCES Usuarios (userID)  
-    NOT DEFERRABLE 
-    INITIALLY IMMEDIATE
-;
-
--- Reference: WhishList_Productos (table: WhishList)
-ALTER TABLE WhishList ADD CONSTRAINT WhishList_Productos
-    FOREIGN KEY (productID)
-    REFERENCES Productos (productID)  
-    NOT DEFERRABLE 
-    INITIALLY IMMEDIATE
-;
-
--- Reference: WhishList_Usuarios (table: WhishList)
-ALTER TABLE WhishList ADD CONSTRAINT WhishList_Usuarios
     FOREIGN KEY (userID)
     REFERENCES Usuarios (userID)  
     NOT DEFERRABLE 
