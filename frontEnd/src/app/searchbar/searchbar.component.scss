@@ -1,0 +1,21 @@
+.container {
+    background-color: white;
+    
+    display: inline-flex;
+    width: 30%;
+    margin-left:  3em;
+    input{
+        border: none;
+        padding-left: 1em;
+        margin: 1em;
+        width: 80%
+    }
+    
+    svg{
+        padding:.5em;
+    }
+
+    input:focus {
+        outline: none;
+    }
+}

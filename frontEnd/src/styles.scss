@@ -18,7 +18,6 @@ body{
 header{
     background: $primary;
     padding: 1em 0;
-
     a{
         color: white;
         text-decoration:  none;
@@ -38,6 +37,7 @@ header{
 
             li a{
                 padding: 1em;
+                height: 100%;
 
                 &:hover{
                     background: darken($primary, $amount: 10%)
