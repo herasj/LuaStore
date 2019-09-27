@@ -1,6 +1,3 @@
--- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2019-09-27 16:25:15.339
-
 -- tables
 -- Table: Compras
 CREATE TABLE Compras (
