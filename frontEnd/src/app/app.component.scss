@@ -1,0 +1,38 @@
+$primary: black;
+
+header{
+    background: $primary;
+    padding: .6em 0;
+    position: relative;
+    a{
+        color: white;
+        text-decoration:  none;
+    }
+
+    a.logo{
+        font-weight: bold;  
+        align-self: center; 
+    }
+
+    nav{
+        display: inline;
+        ul{
+            float:right;
+            list-style-type: none;
+            margin: .55em;
+            display:flex;
+            
+            
+        }
+        
+    }
+    li a{
+        padding: .5em;
+        margin-left:1em;
+        border-radius: 30px;
+        &:hover{
+            background: white;
+            color: black;
+        }
+    }
+}

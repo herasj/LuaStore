@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
 
-$primary: rgb(111,0, 255);
+
 
 body{
     margin:0;
@@ -15,34 +15,3 @@ body{
     margin: 0 auto;
 }
 
-header{
-    background: $primary;
-    padding: 1em 0;
-    a{
-        color: white;
-        text-decoration:  none;
-    }
-
-    a.logo{
-        font-weight: bold;   
-    }
-
-    nav{
-        float:right;
-
-        ul{
-            list-style-type: none;
-            margin: 0;
-            display: flex;
-
-            li a{
-                padding: 1em;
-                height: 100%;
-
-                &:hover{
-                    background: darken($primary, $amount: 10%)
-                }
-            }
-        }
-    }
-}
