@@ -1,9 +1,10 @@
 .container {
     background-color: white;
-    
+    position: relative;
     display: inline-flex;
     width: 30%;
     margin-left:  3em;
+    border-radius: 40px;
     input{
         border: none;
         padding-left: 1em;
@@ -18,4 +19,51 @@
     input:focus {
         outline: none;
     }
+    .search{
+        position: absolute;
+        margin-top: 2.4em;
+        margin-left: 3%;
+        width: 96%;
+        background: white;
+        border: 2px solid lightgray;
+        border-radius: 10px;
+        
+    
+        nav ul{
+            max-height:200px;
+            overflow:auto;
+            overflow-y: auto;
+            list-style-type: none;
+            margin: 0em;
+            padding: .6em;
+            li a{
+    
+            }
+        }
+        
+    }
 }
+
+
+
+#list::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#list::-webkit-scrollbar
+{
+	width: 12px;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+#list::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
