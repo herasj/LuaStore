@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
   }
 
   firstResize(){
-
+    console.log("dsds")
   }
 
   setVisible(visible: boolean){

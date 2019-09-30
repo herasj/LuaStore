@@ -1,35 +1,36 @@
 <header>
   <div class="container" (window:resize)="onResize($event)" >
     <nav class="navbar navbar-expand-md navbar-dark transparent" style="width: 100%">
-      <a href="#" routerLink="/" class="logo"><img src="assets/logo.png" style="max-height: 40px;"></a>
-      <div class="searchbar" [style.width]="isInMobile ? '70%' : '40%'">
+      <div [ngClass]="isInMobile ? 'col-2' : 'col-2'">
+        <a href="#" routerLink="/" class="logo"><img src="assets/logo.png" style="max-height: 40px;"></a>
+      </div>
+      <div class="searchbar" [style.width]="isInMobile ? '75%' : '40%'">
         <app-searchbar [isInMobile]="isInMobile"></app-searchbar>
       </div>
-      <div class="collapse navbar-collapse"  >
+      <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto" style="margin: 0em">
           <li class="nav-item active">
             <a class="nav-link" href="#" id="user" onclick="return false;"><i class="fas fa-user" id="user"></i>Usuario</a>
-            <div class="userTile" *ngIf = "showingUser">
-              
+            <div class="userTile" *ngIf = "true">
+              <h5>Iniciar sesión<noscript></noscript></h5>
+              <p>Email</p>
+              <input type="email" placeholder="Email">
+              <p>Contraseña</p>
+              <input type="password" placeholder="Contraseña">
+              <a href="#">Iniciar sesión</a>
+              <h6>ó</h6>
+              <p id="register">No tienes cuenta? <span>Registrate</span></p>
             </div>
+            <div class="triangle-with-shadow"></div>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="#" id="shopping" onclick="return false;"><i class="fas fa-shopping-cart" id="shopping"></i>Carrito</a>
-            <div class="cartTile" *ngIf = "showingCart">
-              <ul>
-                <li>Producto 1</li>
-                <li>Producto 2</li>
-                <li>Producto 1</li>
-                <li>Producto 2</li>
-                <li>Producto 1</li>
-                <li>Producto 2</li>
-              </ul>
-              <a href="#">Comprar</a>
-            </div>
+            
           </li>
         </ul>
       </div>
     </nav>
+    
   </div>
   <!-- <div class="container" (window:resize)="onResize($event)" [style.width]="isInMobile ? '100%' : '80%'">
     
