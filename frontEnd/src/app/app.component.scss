@@ -1,18 +1,22 @@
 $primary: black;
 
+.container {
+    margin: auto;
+}
+
+
 header{
     background: $primary;
     padding: .6em 0;
     position: relative;
+
     a{
         color: white;
         text-decoration:  none;
+        
     }
 
-    a.logo{
-        font-weight: bold;  
-        align-self: center; 
-    }
+    
 
     nav{
         display: inline;
@@ -26,6 +30,30 @@ header{
         }
         
     }
+    .navbar{
+        display: inline-flex;
+        height: 100%;
+        padding: 0px;
+        a{
+            padding:.5em;
+            margin-right: 1em;
+            border-radius: 30px;
+            &:hover{
+                background: white;
+                color: black;
+            }
+        }
+        a.logo{
+            font-weight: bold;  
+            align-self: center;
+            height: 100%;
+            padding: 0px;
+            &:hover{
+                background-color: inherit;
+            }
+        }
+    }
+
     li a{
         padding: .5em;
         margin-left:1em;
@@ -35,4 +63,23 @@ header{
             color: black;
         }
     }
+
+    i{
+        margin-right: .4em;
+    }
+
+    .userTile{
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        background-color: red;
+    }
+
+    .cartTile{
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        background-color: red;
+    }
+    
 }
