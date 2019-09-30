@@ -1,14 +1,49 @@
 <header>
-  <div class="container">
-    <a href="#" routerLink="/" class="logo">Omegonorreome Store</a>
-    <app-searchbar></app-searchbar>
-    <nav>
-      <ul>
-        <li><a href="#" routerLink="/">Carrito</a></li>
-        <li><a href="#" routerLink="/list">Usuario</a></li>
-      </ul>
+  <div class="container" (window:resize)="onResize($event)" >
+    <nav class="navbar navbar-expand-md navbar-dark transparent" style="width: 100%">
+      <a href="#" routerLink="/" class="logo"><img src="assets/logo.png" style="max-height: 40px;"></a>
+      <div class="searchbar" [style.width]="isInMobile ? '70%' : '40%'">
+        <app-searchbar></app-searchbar>
+      </div>
+      <div class="collapse navbar-collapse"  >
+        <ul class="navbar-nav ml-auto" style="margin: 0em">
+          <li class="nav-item active">
+            <a class="nav-link" href="#" id="user" onclick="return false;"><i class="fas fa-user" id="user"></i>Usuario</a>
+            <div class="userTile" *ngIf = "showingUser">Recuadro para iniciar sesion o ver perfil xd</div>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#" id="shopping" onclick="return false;"><i class="fas fa-shopping-cart" id="shopping"></i>Carrito</a>
+            <div class="userTile" *ngIf = "showingCart">Recuadro para ver el carrito xd</div>
+          </li>
+        </ul>
+      </div>
     </nav>
   </div>
+  <!-- <div class="container" (window:resize)="onResize($event)" [style.width]="isInMobile ? '100%' : '80%'">
+    
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">Navbar</a> -->
+      
+      <!-- Barra de Busqueda -->
+      <!-- <div class="col-6">
+        <app-searchbar></app-searchbar>
+      </div> -->
+      <!-- Navbar Collapse -->
+      <!-- <div class="collapse navbar-collapse"  >
+        <ul class="navbar-nav ml-auto" style="margin: 0em">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"><i class="fas fa-user    "></i>Usuario</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i>Carrito</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div> -->
+
 </header>
 
 <div class="container">
