@@ -3,17 +3,29 @@
     <nav class="navbar navbar-expand-md navbar-dark transparent" style="width: 100%">
       <a href="#" routerLink="/" class="logo"><img src="assets/logo.png" style="max-height: 40px;"></a>
       <div class="searchbar" [style.width]="isInMobile ? '70%' : '40%'">
-        <app-searchbar></app-searchbar>
+        <app-searchbar [isInMobile]="isInMobile"></app-searchbar>
       </div>
       <div class="collapse navbar-collapse"  >
         <ul class="navbar-nav ml-auto" style="margin: 0em">
           <li class="nav-item active">
             <a class="nav-link" href="#" id="user" onclick="return false;"><i class="fas fa-user" id="user"></i>Usuario</a>
-            <div class="userTile" *ngIf = "showingUser">Recuadro para iniciar sesion o ver perfil xd</div>
+            <div class="userTile" *ngIf = "showingUser">
+              
+            </div>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="#" id="shopping" onclick="return false;"><i class="fas fa-shopping-cart" id="shopping"></i>Carrito</a>
-            <div class="userTile" *ngIf = "showingCart">Recuadro para ver el carrito xd</div>
+            <div class="cartTile" *ngIf = "showingCart">
+              <ul>
+                <li>Producto 1</li>
+                <li>Producto 2</li>
+                <li>Producto 1</li>
+                <li>Producto 2</li>
+                <li>Producto 1</li>
+                <li>Producto 2</li>
+              </ul>
+              <a href="#">Comprar</a>
+            </div>
           </li>
         </ul>
       </div>

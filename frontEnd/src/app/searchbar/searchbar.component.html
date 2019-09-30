@@ -1,14 +1,17 @@
 
 <div class="container">
-    
-    <input type="text" pInputText [(ngModel)]="searching" (ngModelChange)="searchTriggered()" placeholder="Busca lo que quieras cachón" (keydown.enter)="save()">
+    <div class="toggle" *ngIf = "isInMobile">
+            <a href="#"><i class="fas fa-bars"></i></a>
+    </div>
+
+    <input type="text" pInputText [(ngModel)]="searching" [style.margin-left]="isInMobile ? '0em' : '1em'" (ngModelChange)="searchTriggered()" placeholder="Busca lo que quieras cachón" (keydown.enter)="save()">
     <a href="#"><i class="fas fa-search fa-fw 2x"></i></a>
     
     <div class="search" *ngIf = "!hidden">
         <nav>
             <ul id="list">
                 <li *ngFor="let result of results">
-                    <a class="name" h>{{result.name}}</a>
+                    <a class="name">{{result.name}}</a>
                 </li>
             </ul>
         </nav>

@@ -16,20 +16,6 @@ header{
         
     }
 
-    
-
-    nav{
-        display: inline;
-        ul{
-            float:right;
-            list-style-type: none;
-            margin: .55em;
-            display:flex;
-            
-            
-        }
-        
-    }
     .navbar{
         display: inline-flex;
         height: 100%;
@@ -70,16 +56,45 @@ header{
 
     .userTile{
         position: absolute;
-        height: 100px;
-        width: 100px;
-        background-color: red;
+        max-height: 350px;
+        width: 270px;
+        right: 140px;
+        -webkit-box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.55);
+        -moz-box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.55);
+        box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.55);
+        background-color: white;
+        
+        ul{
+            padding: 0px;
+            text-align: center;
+            list-style: none;
+        }
+
     }
 
     .cartTile{
         position: absolute;
-        height: 100px;
-        width: 100px;
-        background-color: red;
+        max-height: 650px;
+        width: 270px;
+        right: 0px;
+        -webkit-box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.55);
+        -moz-box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.55);
+        box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.55);
+        background-color: white;
+        text-align: center;
+        ul{
+            padding: 0px;
+            text-align: center;
+            list-style: none;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+            &:hover{
+                background: black;
+                color: white;
+            }
+        }
     }
     
 }
