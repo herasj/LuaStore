@@ -54,41 +54,58 @@ header{
         margin-right: .4em;
     }
 
+    
     .userTile{
         position: absolute;
-        max-height: 350px;
+        height: 310px;
         width: 270px;
+        top:70px;
         right: 140px;
         -webkit-box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.55);
         -moz-box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.55);
         box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.55);
         background-color: white;
-        
-        ul{
-            padding: 0px;
-            text-align: center;
-            list-style: none;
-        }
-
-    }
-
-    .cartTile{
-        position: absolute;
-        max-height: 650px;
-        width: 270px;
-        right: 0px;
-        -webkit-box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.55);
-        -moz-box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.55);
-        box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.55);
-        background-color: white;
         text-align: center;
-        ul{
-            padding: 0px;
+        padding: 1em 1.7em;
+        display: inline;
+        border-radius: 5px;
+        
+        h5{
+            font-weight: bold;
+        }
+        h6{
+            margin: 8px 0;
+            font-weight: bold;
+        }
+        p{  
+            text-align: left;
+            margin: 0 0 5px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        p#register{
             text-align: center;
-            list-style: none;
+            font-weight: inherit;
+            span{
+                cursor: pointer;
+                font-weight: bold;
+                text-decoration: underline;
+            }
+        }
+        input{
+            padding-left: 10px;
+            font-size: 15px;
+            width: 100%;
+            padding: 5px 0 5px 5px;
+            margin-bottom: 15px;
         }
         a{
             color: black;
+            font-size: 14px;
+            font-weight: bold;
+            align-self: center;
+            padding: .6em;
+            border-radius: 30px;
             text-decoration: none;
             &:hover{
                 background: black;
@@ -96,5 +113,42 @@ header{
             }
         }
     }
+    .userTile:after,
+    .userTile:before {
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 15px solid rgb(255, 255, 255);
+        top: -14px;
+        content: '';
+        right: 35px;
+        position: absolute;
+        
+        transform: rotate(180deg)
+    }
+
+    /* Styling for second triangle (border) */
+
+    .userTile:before {
+        content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin-left: -0.5em;
+    bottom: -2em;
+    left: 50%;
+    box-sizing: border-box;
+    
+    border: 1em solid black;
+    border-color: transparent transparent #bada55 #bada55;
+    
+    transform-origin: 0 0;
+    transform: rotate(-45deg);
+    
+    box-shadow: -3px 3px 3px 0 rgba(0, 0, 0, 0.4);
+        
+    }
+    
+
+    
     
 }
