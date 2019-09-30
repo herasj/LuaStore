@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpService } from '../http.service';
 import { isEmptyExpression } from '@angular/compiler';
 
@@ -9,6 +9,7 @@ import { isEmptyExpression } from '@angular/compiler';
 })
 export class SearchbarComponent implements OnInit{
 
+  @Input() isInMobile: boolean;
   searching: string;
   hidden: boolean = true;
   results: Object;
@@ -19,6 +20,7 @@ export class SearchbarComponent implements OnInit{
   ngOnInit(){
 
   }
+  
   
   
   searchTriggered(){
