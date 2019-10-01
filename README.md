@@ -25,5 +25,8 @@ Para visualizar lo que corresponde a Front end:
   
 3. Cuando el servidor de Angular esté corriendo pueden ver la pagina en: http://localhost:4200  
 
-
+## Back End
+Prueba de API_REST
+Ruta: api/productos/"Producto"
+Debe retornar un mensaje de conexión con la api
 _Nota: se presupone que tiene instalado Node.js en su computador_
