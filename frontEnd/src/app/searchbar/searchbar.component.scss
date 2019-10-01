@@ -1,10 +1,10 @@
 .container {
     background-color: white;
     position: relative;
-    display: inline-flex;
-    width: 100%;
+    display: flex;
     border-radius: 40px;
     padding: 0px;
+    width: 100%;
     justify-content: center;
     input{
         border: none;
@@ -47,7 +47,6 @@
             
             color: black;
             margin-left: 1em;
-            width: 10%;
             padding-right: .4em;
         }
     }
@@ -56,8 +55,8 @@
         text-align: center;
         color: black;
         margin: 0em;
-        width: 10%;
-        padding-right: .4em;
+        
+        padding-right: .6em;
     }
 }
 

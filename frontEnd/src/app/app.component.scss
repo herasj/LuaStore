@@ -4,26 +4,17 @@ $primary: black;
     margin: auto;
 }
 
-
 header{
     background: $primary;
     padding: .6em 0;
     position: relative;
-
-    a{
-        color: white;
-        text-decoration:  none;
-        
-    }
-
     .navbar{
-        display: inline-flex;
         height: 100%;
         padding: 0px;
         a{
             padding:.5em;
-            margin-right: 1em;
             border-radius: 30px;
+            margin-right: 10px;
             &:hover{
                 background: white;
                 color: black;
@@ -39,21 +30,23 @@ header{
             }
         }
     }
-
-    li a{
-        padding: .5em;
-        margin-left:1em;
+    
+    .userwhole{
         border-radius: 30px;
-        &:hover{
-            background: white;
-            color: black;
+        margin-right: 1em;
+        a{  
+            margin-right: 0px;
+            color: white;
+            &:hover{
+                background: white;
+                color: black;
+            }
         }
     }
 
     i{
         margin-right: .4em;
     }
-
     
     .userTile{
         position: absolute;
@@ -61,8 +54,6 @@ header{
         width: 270px;
         top:70px;
         right: 140px;
-        -webkit-box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.55);
-        -moz-box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.55);
         box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.55);
         background-color: white;
         text-align: center;
@@ -114,19 +105,6 @@ header{
         }
     }
     .userTile:after,
-    .userTile:before {
-        border-left: 15px solid transparent;
-        border-right: 15px solid transparent;
-        border-top: 15px solid rgb(255, 255, 255);
-        top: -14px;
-        content: '';
-        right: 35px;
-        position: absolute;
-        
-        transform: rotate(180deg)
-    }
-
-    /* Styling for second triangle (border) */
 
     .userTile:before {
         content: "";
@@ -135,20 +113,16 @@ header{
     height: 0;
     margin-left: -0.5em;
     bottom: -2em;
-    left: 50%;
+    top: 0px;
+    right: 35px;
     box-sizing: border-box;
     
-    border: 1em solid black;
-    border-color: transparent transparent #bada55 #bada55;
+    border: .5em solid black;
+    border-color: transparent transparent #ffffff #ffffff;
     
     transform-origin: 0 0;
-    transform: rotate(-45deg);
+    transform: rotate(135deg);
     
-    box-shadow: -3px 3px 3px 0 rgba(0, 0, 0, 0.4);
-        
+    box-shadow: -1px 1px 4px 0 rgba(0, 0, 0, 0.11);
     }
-    
-
-    
-    
 }

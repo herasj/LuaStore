@@ -1,4 +1,4 @@
-import { Component,  OnInit, HostListener } from '@angular/core';
+import { Component,  OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,31 +8,22 @@ import { Component,  OnInit, HostListener } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   
-
+  @ViewChild("user",{static: false}) user_tile: ElementRef;  
   title = 'frontEnd';
   isInMobile: boolean;
   showingUser: boolean;
-  showingCart: boolean;
   ngOnInit(){
-    console.log("init en sakgas")
+    if(window.innerWidth<768) this.isInMobile=true;
+    else this.isInMobile=false;
   }
-
+  
   @HostListener('document:click', ['$event'])
   clickout(event) {
-    if(event.toElement.id=="shopping") {
-      this.showingCart = true;
-      this.showingUser = false;
-      console.log(this.showingUser);
-    }
-    else if(event.toElement.id=="user") {
+    if(this.user_tile.nativeElement.contains(event.target)) {
       this.showingUser = true;
-      this.showingCart = false;
-      console.log(this.showingUser);
     }
     else {
       this.showingUser = false
-      this.showingCart = false;
-      console.log(event);
     };
   }
 
@@ -40,8 +31,6 @@ export class AppComponent implements OnInit {
     if(event.target.innerWidth<768) this.isInMobile=true;
     else this.isInMobile=false;
     console.log("resize");
-    this.showingUser = false
-    this.showingCart = false;
   }
 
   firstResize(){
