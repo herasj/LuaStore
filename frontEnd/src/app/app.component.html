@@ -1,27 +1,29 @@
 <header>
   <div class="container" (window:resize)="onResize($event)" >
-    <nav class="navbar navbar-expand-md navbar-dark transparent" style="width: 100%">
-      <div [ngClass]="isInMobile ? 'col-2' : 'col-2'">
-        <a href="#" routerLink="/" class="logo"><img src="assets/logo.png" style="max-height: 40px;"></a>
-      </div>
-      <div class="searchbar" [style.width]="isInMobile ? '75%' : '40%'">
+    <nav class="navbar navbar-expand-md navbar-dark transparent" style="width: 100%; flex-flow: row;">
+      <a href="#" routerLink="/" class="logo"><img src="assets/logo.png" style="max-height: 40px;"></a>
+      <div class="searchbar" [style.width]="isInMobile ? '100%' : '40%'" [style.margin-left]="isInMobile ? '0em' : '3em'">
+          <!-- [style.width]="isInMobile ? 'fit-content' : '40%'" -->
+          <!-- [style.display]="isInMobile ? 'inline' : 'block'" -->
         <app-searchbar [isInMobile]="isInMobile"></app-searchbar>
       </div>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto" style="margin: 0em">
-          <li class="nav-item active">
-            <a class="nav-link" href="#" id="user" onclick="return false;"><i class="fas fa-user" id="user"></i>Usuario</a>
-            <div class="userTile" *ngIf = "true">
-              <h5>Iniciar sesión<noscript></noscript></h5>
-              <p>Email</p>
-              <input type="email" placeholder="Email">
-              <p>Contraseña</p>
-              <input type="password" placeholder="Contraseña">
-              <a href="#">Iniciar sesión</a>
-              <h6>ó</h6>
-              <p id="register">No tienes cuenta? <span>Registrate</span></p>
+          <li class="nav-item active" >
+            <div class="userwhole" #user>
+                <a class="nav-link" href="#" onclick="return false;"><i class="fas fa-user"></i>Usuario</a>
+                <div class="userTile" *ngIf = "showingUser">
+                  <h5>Iniciar sesión</h5>
+                  <p>Email</p>
+                  <input type="email" placeholder="Email">
+                  <p>Contraseña</p>
+                  <input type="password" placeholder="Contraseña">
+                  <a href="#">Iniciar sesión</a>
+                  <h6>ó</h6>
+                  <p id="register">No tienes cuenta? <span>Registrate</span></p>
+                </div>
             </div>
-            <div class="triangle-with-shadow"></div>
+            
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="#" id="shopping" onclick="return false;"><i class="fas fa-shopping-cart" id="shopping"></i>Carrito</a>
@@ -30,33 +32,7 @@
         </ul>
       </div>
     </nav>
-    
   </div>
-  <!-- <div class="container" (window:resize)="onResize($event)" [style.width]="isInMobile ? '100%' : '80%'">
-    
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="#">Navbar</a> -->
-      
-      <!-- Barra de Busqueda -->
-      <!-- <div class="col-6">
-        <app-searchbar></app-searchbar>
-      </div> -->
-      <!-- Navbar Collapse -->
-      <!-- <div class="collapse navbar-collapse"  >
-        <ul class="navbar-nav ml-auto" style="margin: 0em">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"><i class="fas fa-user    "></i>Usuario</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i>Carrito</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div> -->
-
 </header>
 
 <div class="container">
