@@ -1,40 +1,40 @@
-<header>
+<!-- <header>
   <div class="container" (window:resize)="onResize($event)" >
-    <nav class="navbar navbar-expand-md navbar-dark transparent" style="width: 100%; flex-flow: row;">
-      <a href="#" routerLink="/" class="logo"><img src="assets/logo.png" style="max-height: 40px;"></a>
-      <div class="searchbar" [style.width]="isInMobile ? '100%' : '40%'" [style.margin-left]="isInMobile ? '0em' : '3em'">
-          <!-- [style.width]="isInMobile ? 'fit-content' : '40%'" -->
-          <!-- [style.display]="isInMobile ? 'inline' : 'block'" -->
-        <app-searchbar [isInMobile]="isInMobile"></app-searchbar>
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto" style="margin: 0em">
-          <li class="nav-item active" >
-            <div class="userwhole" #user>
-                <a class="nav-link" href="#" onclick="return false;"><i class="fas fa-user"></i>Usuario</a>
-                <div class="userTile" *ngIf = "showingUser">
-                  <h5>Iniciar sesión</h5>
-                  <p>Email</p>
-                  <input type="email" placeholder="Email">
-                  <p>Contraseña</p>
-                  <input type="password" placeholder="Contraseña">
-                  <a href="#">Iniciar sesión</a>
-                  <h6>ó</h6>
-                  <p id="register">No tienes cuenta? <span>Registrate</span></p>
-                </div>
-            </div>
-            
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#" id="shopping" onclick="return false;"><i class="fas fa-shopping-cart" id="shopping"></i>Carrito</a>
-            
-          </li>
-        </ul>
-      </div>
-    </nav>
+    
   </div>
-</header>
-
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+</header> -->
+<nav class="navbar fixed-top navbar-expand-md  navbar-dark transparent" style="width: 100%; flex-flow: row;" [style.padding]="isInMobile ? '.5em 1em' : '.5em 14%'" (window:resize)="onResize($event)">
+    <a href="#" routerLink="/" class="logo"><img src="assets/logo.png" style="max-height: 40px;"></a>
+    <div class="searchbar" [style.width]="isInMobile ? '100%' : '40%'" [style.margin-left]="isInMobile ? '0em' : '2%'">
+        <!-- [style.width]="isInMobile ? 'fit-content' : '40%'" -->
+        <!-- [style.display]="isInMobile ? 'inline' : 'block'" -->
+      <app-searchbar [isInMobile]="isInMobile"></app-searchbar>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto" style="margin: 0em">
+        <li class="nav-item active" >
+          <div class="userwhole" #user>
+              <a class="nav-link" href="#" onclick="return false;"><i class="fas fa-user"></i>Usuario</a>
+              <div class="userTile" *ngIf = "showingUser">
+                <h5>Iniciar sesión</h5>
+                <p>Email</p>
+                <input type="email" placeholder="Email">
+                <p>Contraseña</p>
+                <input type="password" placeholder="Contraseña">
+                <a href="#">Iniciar sesión</a>
+                <h6>ó</h6>
+                <p id="register">No tienes cuenta? <span>Registrate</span></p>
+              </div>
+          </div>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#" id="shopping" onclick="return false;"><i class="fas fa-shopping-cart" id="shopping"></i>Carrito</a>
+          
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+      <router-outlet></router-outlet>
+  </div>
+  

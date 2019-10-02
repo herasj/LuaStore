@@ -4,8 +4,10 @@
     display: flex;
     border-radius: 40px;
     padding: 0px;
+    margin:auto;
     width: 100%;
     justify-content: center;
+    max-width: none;
     input{
         border: none;
         padding-left: .5em;
