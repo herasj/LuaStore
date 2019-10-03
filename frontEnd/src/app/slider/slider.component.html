@@ -1,7 +1,26 @@
-<div class="hero-section ">
-    
-        <img *ngIf="index == 1" [@fadeInOnEnter] class="d-block w-100" src="/assets/bg.jpg" style="display: flex; height: 600px;object-fit: cover; ">
-        <img *ngIf="index == 2" [@fadeInOnEnter] class="d-block w-100" src="/assets/bg-2.jpg" style="display: flex; height: 600px;object-fit: cover; ">
-        <span (click)="increaseIndex()"><i class="fas fa-arrow-circle-right"></i></span>
-        
+<div class="slidersection">
+        <div class="imageslid">
+                <img *ngIf="index == 1" [@fadeInOnEnter] class="d-block w-100" src="/assets/bg.jpg" style="display: flex;object-fit: cover; ">
+                <img *ngIf="index == 2" [@fadeInOnEnter] class="d-block w-100" src="/assets/bg-2.jpg" style="display: flex;object-fit: cover; ">
+        </div>
+        <div class="inside" style>
+                <div class="column">
+                        
+                                <h6>Nuevos productos</h6>
+                                <h1>Chaquetas Denim</h1>
+                                <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                        Nam dignissim enim vitae felis suscipit, vestibulum iaculis 
+                                        urna vehicula. Ut sit amet felis non lorem dignissim lacinia 
+                                        id quis lorem. 
+                                </p>
+                                <div class="buttons"></div>
+                        
+                        
+                </div>
+                <div class="column">
+                        <div class="discount-pop" [@fadeInOnEnter]></div>
+                </div> 
+        </div>
+
 </div>
