@@ -1,0 +1,7 @@
+<div class="hero-section ">
+    
+        <img *ngIf="index == 1" [@fadeInOnEnter] class="d-block w-100" src="/assets/bg.jpg" style="display: flex; height: 600px;object-fit: cover; ">
+        <img *ngIf="index == 2" [@fadeInOnEnter] class="d-block w-100" src="/assets/bg-2.jpg" style="display: flex; height: 600px;object-fit: cover; ">
+        <span (click)="increaseIndex()"><i class="fas fa-arrow-circle-right"></i></span>
+        
+</div>

@@ -4,7 +4,7 @@
             <a href="#"><i class="fas fa-bars"></i></a>
     </div>
 
-    <input type="text" pInputText [(ngModel)]="searching" [style.margin-left]="isInMobile ? '0em' : '1em'" (ngModelChange)="searchTriggered()" placeholder="Busca lo que quieras cachón" (keydown.enter)="save()">
+    <input type="text" pInputText [(ngModel)]="searching" [style.margin-left]="isInMobile ? '0em' : '1em'" (ngModelChange)="searchTriggered()" placeholder="Busca lo que quieras" (keydown.enter)="save()">
     <a href="#"><i class="fas fa-search fa-fw 2x"></i></a>
     
     <div class="search" *ngIf = "!hidden">

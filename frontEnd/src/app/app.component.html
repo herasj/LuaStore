@@ -1,13 +1,6 @@
-<!-- <header>
-  <div class="container" (window:resize)="onResize($event)" >
-    
-  </div>
-</header> -->
 <nav class="navbar fixed-top navbar-expand-md  navbar-dark transparent" style="width: 100%; flex-flow: row;" [style.padding]="isInMobile ? '.5em 1em' : '.5em 14%'" (window:resize)="onResize($event)">
     <a href="#" routerLink="/" class="logo"><img src="assets/logo.png" style="max-height: 40px;"></a>
     <div class="searchbar" [style.width]="isInMobile ? '100%' : '40%'" [style.margin-left]="isInMobile ? '0em' : '2%'">
-        <!-- [style.width]="isInMobile ? 'fit-content' : '40%'" -->
-        <!-- [style.display]="isInMobile ? 'inline' : 'block'" -->
       <app-searchbar [isInMobile]="isInMobile"></app-searchbar>
     </div>
     <div class="collapse navbar-collapse">
@@ -35,9 +28,16 @@
     </div>
   </nav>
   
-  <nav class="navbar navbar-expand-md fixed-top navbar-light" style="top:63px; background:white">
-      
-  </nav>
-  <router-outlet></router-outlet>
+<nav id="categorias" *ngIf="!isInMobile" class="navbar navbar-expand-md fixed-top navbar-light" style="top:61px; background:white; list-style: none;z-index: 100;">
+  <li><a href="#" class="hvr-underline-from-center">Inicio</a></li>
+  <li><a href="#" class="hvr-underline-from-center">Hombres</a></li>
+  <li><a href="#" class="hvr-underline-from-center">Mujeres</a></li>
+  <li><a href="#" class="hvr-underline-from-center">Joyeria</a></li>
+  <li><a href="#" class="hvr-underline-from-center">Zapatos</a></li>
+</nav>
+
+<router-outlet></router-outlet>
+  
+  
  
   
