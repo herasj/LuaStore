@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  isInMobile: boolean ;
   clickCounter: number = 0;
   name: string='Aja cv';
 
@@ -25,5 +26,9 @@ export class HomeComponent implements OnInit {
       notactive: this.clickCounter <= 4,
     }
     return myClasses;
+  }
+  onResize(event){
+    if(event.target.innerWidth<768) this.isInMobile=true;
+    else this.isInMobile=false;
   }
 }

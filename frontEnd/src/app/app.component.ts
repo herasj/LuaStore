@@ -1,4 +1,4 @@
-import { Component,  OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
+import { Component,  OnInit, HostListener, ViewChild, ElementRef, } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +7,13 @@ import { Component,  OnInit, HostListener, ViewChild, ElementRef } from '@angula
   
 })
 export class AppComponent implements OnInit {
-  
+
+
   @ViewChild("user",{static: false}) user_tile: ElementRef;  
   title = 'frontEnd';
   isInMobile: boolean;
   showingUser: boolean;
+
   ngOnInit(){
     if(window.innerWidth<768) this.isInMobile=true;
     else this.isInMobile=false;
@@ -30,15 +32,6 @@ export class AppComponent implements OnInit {
   onResize(event){
     if(event.target.innerWidth<768) this.isInMobile=true;
     else this.isInMobile=false;
-    console.log("resize");
-  }
-
-  firstResize(){
-    console.log("dsds")
-  }
-
-  setVisible(visible: boolean){
-    this.showingUser=visible;
   }
   
 }
