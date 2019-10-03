@@ -1,8 +1,34 @@
-.hero-section{
+.slidersection{
     position: relative;
-    span{
+    height: 665px;
+    .imageslid{
         position: absolute;
-        top: 155px;
-        
+        z-index: -1;
+        img{
+            height: 665px;
+        }
+    }
+    .inside{
+        padding: 10em 14%;
+        color:white;
+        h1{
+            font-weight: bold;
+            font-size: 50px;
+        }
+        h6{
+            font-weight: bold;
+        }
+        p{  
+            margin-top: 2em;
+            max-width: 600px;
+        }
+        .discount-pop{
+            height: 100px;
+            width: 100px;
+            align-self: center;
+            border-radius: 100px;
+            background: fuchsia;
+            float:right;
+        }
     }
 }
