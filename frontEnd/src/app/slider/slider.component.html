@@ -4,22 +4,63 @@
                 <img *ngIf="index == 2" [@fadeInOnEnter] class="d-block w-100" src="/assets/bg-2.jpg" style="display: flex;object-fit: cover; ">
         </div>
         <div class="inside" style>
-                <div class="column">
-                        
-                                <h6>Nuevos productos</h6>
-                                <h1>Chaquetas Denim</h1>
-                                <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                        Nam dignissim enim vitae felis suscipit, vestibulum iaculis 
-                                        urna vehicula. Ut sit amet felis non lorem dignissim lacinia 
-                                        id quis lorem. 
-                                </p>
-                                <div class="buttons"></div>
-                        
+
+                <div class="row" *ngIf="index == 1">
+                        <div class="col-sm">
+                
+                                        <h6 [@slideInDownOnEnter]>Nuevos productos </h6>
+                                        <h1 [@slideInLeftOnEnter]>Chaquetas Denim</h1>
+                                        <p [@slideInUpOnEnter]>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                                Nam dignissim enim vitae felis suscipit, vestibulum iaculis 
+                                                urna vehicula. Ut sit amet felis non lorem dignissim lacinia 
+                                                id quis lorem. 
+                                        </p>
+                                        
+                                
+                                
+                        </div>
+                        <div class="col-sm" style="display: flex; align-items: center; justify-content: flex-end">
+                                <div class="discount-pop" [@rotateInDownRightOnEnter]>
+                                        <h6>Descuento</h6>
+                                        <h1>45%</h1>
+                                        <p>Compra Ya!</p>
+                                </div>
+                        </div>
                         
                 </div>
-                <div class="column">
-                        <div class="discount-pop" [@fadeInOnEnter]></div>
+
+                <div class="row" *ngIf="index == 2">
+                                <div class="col-sm">
+                        
+                                                <h6 [@slideInDownOnEnter]>Nuevos productos </h6>
+                                                <h1 [@slideInLeftOnEnter]>Gafas Hipster</h1>
+                                                <p [@slideInUpOnEnter]>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                                        Nam dignissim enim vitae felis suscipit, vestibulum iaculis 
+                                                        urna vehicula. Ut sit amet felis non lorem dignissim lacinia 
+                                                        id quis lorem. 
+                                                </p>
+                                                
+                                        
+                                        
+                                </div>
+                                <div class="col-sm" style="display: flex; align-items: center; justify-content: flex-end">
+                                        <div class="discount-pop" [@rotateInDownRightOnEnter]>
+                                                <h6>Descuento</h6>
+                                                <h1>20%</h1>
+                                                <p>Compra Ya!</p>
+                                        </div>
+                                </div>
+                                
+                        </div>
+                <div class="buttons">
+                        <i class="fas fa-arrow-circle-left" (click)="decreaseIndex()"></i>
+                        <i class="fas fa-dot-circle"*ngIf="index == 1"></i>
+                        <i class="far fa-dot-circle"*ngIf="index == 1"></i>
+                        <i class="far fa-dot-circle"*ngIf="index == 2"></i>
+                        <i class="fas fa-dot-circle"*ngIf="index == 2"></i>
+                        <i class="fas fa-arrow-circle-right"(click)="increaseIndex()"></i>                
                 </div> 
         </div>
 
