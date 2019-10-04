@@ -3,10 +3,11 @@
     margin-top: 3em;
     height: 665px;
     .imageslid{
-        position: absolute;
+        position: relative;
         z-index: -1;
         img{
             height: 665px;
+            position: absolute;
         }
     }
     .inside{
@@ -47,6 +48,9 @@
         }
         .buttons{
             margin-top:3em;
+            i{
+                transition: opacity 0.6s ease;
+            }
         }
     }
 }
