@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { fadeInOnEnterAnimation, fadeOutOnLeaveAnimation, rotateInDownRightAnimation, rotateInDownRightOnEnterAnimation, slideInDownOnEnterAnimation, slideInUpOnEnterAnimation, slideInLeftOnEnterAnimation } from 'angular-animations';
+import { fadeInOnEnterAnimation, fadeOutOnLeaveAnimation, rotateInDownRightAnimation, rotateInDownRightOnEnterAnimation, slideInDownOnEnterAnimation, slideInUpOnEnterAnimation, slideInLeftOnEnterAnimation, fadeInRightAnimation, fadeOutLeftOnLeaveAnimation, fadeInRightOnEnterAnimation } from 'angular-animations';
 
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss'],
   animations: [
-    fadeInOnEnterAnimation(),
-    fadeOutOnLeaveAnimation(),
+    fadeInRightOnEnterAnimation({translate: '30%'}),
+    fadeOutLeftOnLeaveAnimation({translate: '30%'}),
     rotateInDownRightOnEnterAnimation(),
     slideInDownOnEnterAnimation(),
     slideInUpOnEnterAnimation(),
