@@ -1,5 +1,6 @@
 .slidersection{
     position: relative;
+    margin-top: 3em;
     height: 665px;
     .imageslid{
         position: absolute;
@@ -23,12 +24,29 @@
             max-width: 600px;
         }
         .discount-pop{
-            height: 100px;
-            width: 100px;
-            align-self: center;
+            height: 150px;
+            width: 150px;
             border-radius: 100px;
             background: fuchsia;
             float:right;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+            h1{
+                font-weight: bold;
+                margin: 0;
+            }
+            h6{
+                margin: 0;
+            }
+            p{
+                margin: 0 0;
+            }
+            
+        }
+        .buttons{
+            margin-top:3em;
         }
     }
 }
