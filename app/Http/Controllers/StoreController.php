@@ -45,9 +45,11 @@ class StoreController extends Controller
      */
     public function show($id)
     {
+        $Producto = new Producto;
+        
+       //Buscar segun ID
         // Retorna api/productos/"Producto"
-        return "Conectado con api";
-
+        return "...";
     }
 
     /**
