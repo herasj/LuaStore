@@ -33,10 +33,10 @@ Para poder interactuar con la API debe:
 
 2. Dirigirse a la dirección http://localhost:5000 e ingresar una de las siguientes rutas:
 
-    >/producto/all/{id}
+    >/Producto/all/{id}.
     >Devuelve toda la información respecto al producto deseado segun {id}.
 
-    >/producto/name/{nombre}
+    >/Producto/name/{nombre}.
     >Devuelve el nombre autocompletado segun {nombre}.
 
 PD: {id} y {nombre} son variables, se escriben sin las llaves, no seas imbecil.

@@ -19,7 +19,7 @@ app.get('/Producto/all/:id', function (req, res) {
     console.log("Parametros de entrada: "+req.params);
     console.log("ID: "+id);
     //Conectar a una db
-    getID(dbConfig,id,res,sql);
+    getbyID(dbConfig,id,res,sql);
 });
 
 //CompletarNombre
@@ -50,30 +50,36 @@ var server = app.listen(5000, function () {
 
 
 //Query
-function getID(dbConfig,id,res,sql){
+function getbyID(dbConfig,id,res,sql){
+    console.log("Llamado a la función");    
     sql.connect(dbConfig, function (err) {
         if (err){console.log(err); res.send(errmsg);}//Mostrar error si existe
+        console.log("Conexión establecida");        
         var request = new sql.Request();
         var query=`SELECT * FROM Productos p WHERE p.productID=${id}`;
         // Aplicar query a la db y guardar en recordset
         request.query(query, function (err, recordset) {
             if (err) console.log(err) //Si hay error mostrar
             res.send(recordset);//Enviar resultados mediante APIREST
+            sql.close();
         });
     });
-    sql.close();
+    
 }
 
 function getName(dbConfig,name,res,sql){
+    console.log("Llamado a la funcion");    
     sql.connect(dbConfig, function (err) {
         if (err){console.log(err); res.send(errmsg);}//Mostrar error si existe
+        console.log("Conexion establecida");    
         var request = new sql.Request();
         var query=`SELECT p.Nombre FROM Productos p WHERE p.Nombre like '${name}%'`;
         // Aplicar query a la db y guardar en recordset
         request.query(query, function (err, recordset) {
             if (err) console.log(err) //Si hay error mostrar
             res.send(recordset);//Enviar resultados mediante APIREST
+            sql.close();
         });
     });
-    sql.close();
+    
 }
