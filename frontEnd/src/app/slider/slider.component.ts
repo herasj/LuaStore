@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { fadeInOnEnterAnimation, fadeOutOnLeaveAnimation, rotateInDownRightAnimation, rotateInDownRightOnEnterAnimation, slideInDownOnEnterAnimation, slideInUpOnEnterAnimation, slideInLeftOnEnterAnimation, fadeInRightAnimation, fadeOutLeftOnLeaveAnimation, fadeInRightOnEnterAnimation } from 'angular-animations';
+import { timer, Subscription } from 'rxjs';
+import {rotateInDownRightOnEnterAnimation, slideInDownOnEnterAnimation, 
+        slideInUpOnEnterAnimation, slideInLeftOnEnterAnimation, slideInRightOnEnterAnimation, 
+        slideOutLeftOnLeaveAnimation } from 'angular-animations';
 
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss'],
   animations: [
-    fadeInRightOnEnterAnimation({translate: '30%'}),
-    fadeOutLeftOnLeaveAnimation({translate: '30%'}),
+    slideInRightOnEnterAnimation(),
+    slideOutLeftOnLeaveAnimation(),
     rotateInDownRightOnEnterAnimation(),
     slideInDownOnEnterAnimation(),
     slideInUpOnEnterAnimation(),
@@ -18,6 +21,7 @@ export class SliderComponent implements OnInit {
 
   constructor() { }
 
+  private timerSubscription: Subscription;
   index: number = 1; 
 
   ngOnInit() {
@@ -31,5 +35,11 @@ export class SliderComponent implements OnInit {
   decreaseIndex(){
     if(this.index==1) this.index=2;
     else this.index--;
+  }
+  
+  ngAfterViewInit() : void {
+    this.timerSubscription = timer(6000, 6000).subscribe(() => {
+      this.increaseIndex();
+    });
   }
 }

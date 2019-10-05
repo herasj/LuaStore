@@ -1,11 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpService } from '../http.service';
 import { isEmptyExpression } from '@angular/compiler';
+import { collapseAnimation } from 'angular-animations';
 
 @Component({
   selector: 'app-searchbar',
   templateUrl: './searchbar.component.html',
-  styleUrls: ['./searchbar.component.scss']
+  styleUrls: ['./searchbar.component.scss'],
+  animations: [collapseAnimation()]
 })
 export class SearchbarComponent implements OnInit{
 
