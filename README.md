@@ -12,10 +12,6 @@ Para visualizar lo que corresponde a Front end:
 
 _Nota: se presupone que tiene instalado Node.js en su computador_
 
-## Back End
-Prueba de API_REST.
-1. Ruta: api/productos/"Producto".
-2. Debe retornar un mensaje de conexión con la api.
 
 
 
