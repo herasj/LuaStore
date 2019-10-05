@@ -26,8 +26,19 @@ Para visualizar lo que corresponde a Front end:
 3. Cuando el servidor de Angular esté corriendo pueden ver la pagina en: http://localhost:4200  
 
 ## Back End
-Prueba de API_REST.
-1. Ruta: api/productos/"Producto".
-2. Debe retornar un mensaje de conexión con la api.
+Para poder interactuar con la API debe:
+
+1. Correr el servidor usando:
+    >node server.js
+
+2. Dirigirse a la dirección http://localhost:5000 e ingresar una de las siguientes rutas:
+
+    >/producto/all/{id}
+    >Devuelve toda la información respecto al producto deseado segun {id}.
+
+    >/producto/name/{nombre}
+    >Devuelve el nombre autocompletado segun {nombre}.
+
+PD: {id} y {nombre} son variables, se escriben sin las llaves, no seas imbecil.
 
 _Nota: se presupone que tiene instalado Node.js en su computador_
