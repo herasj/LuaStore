@@ -15,7 +15,7 @@ var dbConfig = {    //Parametros de conexion sql
 };
 
 //RUTAS
-app.put('/Random', function (req, res) {
+app.get('/Random', function (req, res) {
     InsertRandom(dbConfig,res,sql);
 });
 
@@ -77,14 +77,12 @@ function getName(dbConfig,name,res,sql){
         });
     });
 }
- function InsertRandom(dbConfig,res,sql){
-    console.log("Llamado a la funcion");    
+ function InsertRandom(dbConfig,res,sql){ //NOFUNCIONA CORRECTAMENTE
+    for (let i = 103; i < 200; i++) {
     sql.connect(dbConfig, function (err) {
         if (err){console.log(err); res.send(err);}//Mostrar error si existe
-        console.log("Conexion establecida");    
         var request = new sql.Request();
         var Insertados=[];
-        for (let i = 102; i < 200; i++) {
             let randName=faker.name.findName();
             let randLast=faker.name.lastName();
             let randDate=faker.date.past();
@@ -92,16 +90,18 @@ function getName(dbConfig,name,res,sql){
             let randAdd=faker.address.streetAddress();
             let randCoins=Math.round(Math.random()*100);
             Insertados[102-i] =randName+" "+randLast+" "+randDate+" "+randPhone+" "+randAdd+" "+randCoins.toString();
-            var query=`INSERT INTO Usuarios (userID, Nombre, Apellidos, Fecha_Nac, Telefono, Direccion, "Key", Coins) VALUES (${i},${randName},${randLast},${randDate},${randPhone},${randAdd},NULL,${randCoins})`;     
-        } 
+            console.log(i);
+            var query=`INSERT INTO Usuarios (userID, Nombre, Apellidos, Fecha_Nac, Telefono, Direccion, "Key", Coins) VALUES (${i},'${randName}','${randLast}','1994-12-07',30167100,'${randAdd}','NULL',${randCoins})`;     
         // Aplicar query a la db y guardar en recordset
         request.query(query, function (err, recordset) {
             if (err) console.log(err) //Si hay error mostrar
             console.log("Exito");            
-            res.send(Insertados);//Enviar resultados mediante APIREST
+            //res.send(Insertados);//Enviar resultados mediante APIREST
             sql.close();
         });
     });
+} 
+console.table(Insertados)
  }
 //INSERT INTO Usuarios (userID, Nombre, Apellidos, Fecha_Nac, Telefono, Direccion, "Key", Coins) 
 //VALUES () 
