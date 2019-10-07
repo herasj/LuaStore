@@ -78,7 +78,6 @@ function getName(dbConfig,name,res,sql){
     });
 }
  function InsertRandom(dbConfig,res,sql){ //NOFUNCIONA CORRECTAMENTE
-    for (let i = 103; i < 200; i++) {
     sql.connect(dbConfig, function (err) {
         if (err){console.log(err); res.send(err);}//Mostrar error si existe
         var request = new sql.Request();
@@ -100,8 +99,6 @@ function getName(dbConfig,name,res,sql){
             sql.close();
         });
     });
-} 
-console.table(Insertados)
  }
 //INSERT INTO Usuarios (userID, Nombre, Apellidos, Fecha_Nac, Telefono, Direccion, "Key", Coins) 
 //VALUES () 
