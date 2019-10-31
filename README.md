@@ -1,4 +1,4 @@
-# Omegonorreaome-store
+# Lua Store
 ## Requerimientos
 1.	Usuarios. Tiene que iniciar sesión por email y alguna red social.
 2.	Sistema de fidelización de usuarios: En cada compra se le dan unos respectivos coins que pueden ser usados como un descuento de máximo 10% en algún producto.
