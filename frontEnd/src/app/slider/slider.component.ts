@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { timer, Subscription } from 'rxjs';
 import {rotateInDownRightOnEnterAnimation, slideInDownOnEnterAnimation, 
         slideInUpOnEnterAnimation, slideInLeftOnEnterAnimation, slideInRightOnEnterAnimation, 
-        slideOutLeftOnLeaveAnimation } from 'angular-animations';
+        slideOutLeftOnLeaveAnimation, fadeInOnEnterAnimation, fadeOutOnLeaveAnimation } from 'angular-animations';
 
 @Component({
   selector: 'app-slider',
@@ -15,6 +15,8 @@ import {rotateInDownRightOnEnterAnimation, slideInDownOnEnterAnimation,
     slideInDownOnEnterAnimation(),
     slideInUpOnEnterAnimation(),
     slideInLeftOnEnterAnimation(),
+    fadeInOnEnterAnimation(),
+    fadeOutOnLeaveAnimation()
   ]
 })
 export class SliderComponent implements OnInit {

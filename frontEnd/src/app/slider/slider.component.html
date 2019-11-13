@@ -1,7 +1,7 @@
 <div class="slidersection">
         <div class="imageslid">
-                <img *ngIf="index == 1" [@slideInRightOnEnter] [@slideOutLeftOnLeave] class="d-block w-100" src="/assets/bg.jpg" style="display: flex;object-fit: cover; ">
-                <img *ngIf="index == 2" [@slideInRightOnEnter] [@slideOutLeftOnLeave] class="d-block w-100" src="/assets/bg-2.jpg" style="display: flex;object-fit: cover; ">
+                <img *ngIf="index == 1" [@fadeInOnEnter] [@fadeInOnLeave] class="d-block w-100" src="/assets/bg.jpg" style="display: flex;object-fit: cover; ">
+                <img *ngIf="index == 2" [@fadeInOnEnter] [@fadeInOnLeave] class="d-block w-100" src="/assets/bg-2.jpg" style="display: flex;object-fit: cover; ">
         </div>
         <div class="inside" style>
                 <div class="row" *ngIf="index == 1">

@@ -10,6 +10,9 @@ export class HomeComponent implements OnInit {
   isInMobile: boolean ;
   clickCounter: number = 0;
   name: string='Aja cv';
+  imgurl: string="https://stoffe.kawaiifabric.com/images/product_images/thickbox_img/kawaii-fabric-with-colourful-jigsaw-puzzle-pieces-USA-180087-1.JPG";
+  description: string="description";
+
 
   constructor() { }
 

@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SliderComponent } from './slider/slider.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SliderComponent } from './slider/slider.component';
     HomeComponent,
     ListComponent,
     SearchbarComponent,
-    SliderComponent
+    SliderComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
