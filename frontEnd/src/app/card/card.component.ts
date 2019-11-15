@@ -9,7 +9,8 @@ export class CardComponent implements OnInit {
 
   @Input() description: string;
   @Input() imgurl: string;
-
+  hoverOn: boolean = false;
+  
   constructor() { }
 
   ngOnInit() {

@@ -1,4 +1,15 @@
 .card{
-    height: 300px;
-    width: 300px;
+    position: relative;
+    margin-top: 0.8em;
+    img{
+        height: 100%;
+        width: 100%;
+    }
+    .hov{
+        position: absolute;
+        top: 70%;
+        padding: 1em;
+    }
+
 }
+

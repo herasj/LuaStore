@@ -21,6 +21,7 @@
     "@angular/router": "~8.2.7",
     "angular-animations": "0.0.10",
     "ng": "0.0.0",
+    "ngx-tiny-slider": "0.0.6",
     "rxjs": "~6.4.0",
     "serve": "^11.2.0",
     "tslib": "^1.10.0",

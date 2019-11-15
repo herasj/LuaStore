@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-md  navbar-dark transparent" style="width: 100%; flex-flow: row;" [style.padding]="isInMobile ? '.5em 1em' : '.5em 14%'" (window:resize)="onResize($event)">
+<nav class="navbar fixed-top navbar-expand-md  navbar-dark transparent" style="width: 100%; flex-flow: row;" [style.padding]="isInMobile ? '.5em 1em' : '.5em 20%'" (window:resize)="onResize($event)">
     <a href="#" routerLink="/" class="logo"><img src="assets/logo.png" style="max-height: 40px;"></a>
     <div class="searchbar" [style.width]="isInMobile ? '100%' : '40%'" [style.margin-left]="isInMobile ? '0em' : '2%'">
       <app-searchbar [isInMobile]="isInMobile"></app-searchbar>

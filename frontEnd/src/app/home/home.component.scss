@@ -1,23 +1,9 @@
-span{
-    font-weight: bold;
-    background: lightgray;
-    padding: .3em .8em;
-    cursor: pointer;
-    user-select: none;
+.title{
+    margin-top: 3em;
+    margin-bottom: 1.5em;
 }
-
-.play-container{
-    padding: 3em;
-    border: 1px solid lightgray;
-    margin-bottom: 1em;
-
-    input{
-        padding: 1em;
-        margin-bottom: 2em;
-    }
-}
-
 .home{
     margin-top: 5em;
     z-index: 15;
+    padding: 0em 14%;
 }

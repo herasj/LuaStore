@@ -1,32 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 import { timer, Subscription } from 'rxjs';
-import {rotateInDownRightOnEnterAnimation, slideInDownOnEnterAnimation, 
-        slideInUpOnEnterAnimation, slideInLeftOnEnterAnimation, slideInRightOnEnterAnimation, 
-        slideOutLeftOnLeaveAnimation, fadeInOnEnterAnimation, fadeOutOnLeaveAnimation } from 'angular-animations';
+import {NgxTinySliderSettingsInterface} from 'ngx-tiny-slider';
 
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss'],
-  animations: [
-    slideInRightOnEnterAnimation(),
-    slideOutLeftOnLeaveAnimation(),
-    rotateInDownRightOnEnterAnimation(),
-    slideInDownOnEnterAnimation(),
-    slideInUpOnEnterAnimation(),
-    slideInLeftOnEnterAnimation(),
-    fadeInOnEnterAnimation(),
-    fadeOutOnLeaveAnimation()
-  ]
+  
 })
 export class SliderComponent implements OnInit {
 
-  constructor() { }
-
+  tinySliderConfig: NgxTinySliderSettingsInterface;
   private timerSubscription: Subscription;
   index: number = 1; 
 
   ngOnInit() {
+    this.tinySliderConfig = {
+      touch: true,
+      nav: false,
+      gutter: 10,
+      items:5,
+      controlsContainer: '#customize-controls',
+      swipeAngle: true,
+      controls: false,
+      responsive: {
+        350: {
+          items: 3,
+          controls: true,
+          edgePadding: 30,
+        },
+        500: {
+          items: 4
+        }
+      },
+    };
   }
 
   increaseIndex(){

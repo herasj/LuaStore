@@ -11,6 +11,9 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SliderComponent } from './slider/slider.component';
 import { CardComponent } from './card/card.component';
+import {NgxTinySliderModule} from 'ngx-tiny-slider';
+import { InstafeedComponent } from './instafeed/instafeed.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +22,20 @@ import { CardComponent } from './card/card.component';
     ListComponent,
     SearchbarComponent,
     SliderComponent,
-    CardComponent
+    CardComponent,
+    InstafeedComponent,
+    ProductComponent
+  ],
+  exports:[
+    NgxTinySliderModule
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxTinySliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

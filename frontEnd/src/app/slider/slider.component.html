@@ -1,59 +1,36 @@
-<div class="slidersection">
-        <div class="imageslid">
-                <img *ngIf="index == 1" [@fadeInOnEnter] [@fadeInOnLeave] class="d-block w-100" src="/assets/bg.jpg" style="display: flex;object-fit: cover; ">
-                <img *ngIf="index == 2" [@fadeInOnEnter] [@fadeInOnLeave] class="d-block w-100" src="/assets/bg-2.jpg" style="display: flex;object-fit: cover; ">
-        </div>
-        <div class="inside" style>
-                <div class="row" *ngIf="index == 1">
-                        <div class="col-sm">
-                                        <h6 [@slideInDownOnEnter]>Nuevos productos </h6>
-                                        <h1 [@slideInLeftOnEnter]>Chaquetas Denim</h1>
-                                        <p [@slideInUpOnEnter]>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                Nam dignissim enim vitae felis suscipit, vestibulum iaculis 
-                                                urna vehicula. Ut sit amet felis non lorem dignissim lacinia 
-                                                id quis lorem. 
-                                        </p>   
+<div class="tnslider">
+        <ngx-tiny-slider [config]="tinySliderConfig">
+                <ng-container class="items" style="text-align: center;">
+                        <div class="item">
+                                <app-product></app-product>
                         </div>
-                        <div class="col-sm" style="display: flex; align-items: center; justify-content: flex-end">
-                                <div class="discount-pop" [@rotateInDownRightOnEnter]>
-                                        <h6>Descuento</h6>
-                                        <h1>45%</h1>
-                                        <p>Compra Ya!</p>
-                                </div>
+                        <div class="item">
+                                <app-product></app-product>
                         </div>
-                        
+                        <div class="item">
+                                <app-product></app-product>
+                        </div>
+                        <div class="item">
+                                <app-product></app-product>
+                        </div>
+                        <div class="item">
+                                <app-product></app-product>
+                        </div>
+                        <div class="item">
+                                <app-product></app-product>
+                        </div>
+                </ng-container>
+                
+        </ngx-tiny-slider>
+        <div class="customize-tools">
+                <div class="controls" id="customize-controls">
+                        <div class="prev">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                        </div>
+                        <div class="next">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </div>
                 </div>
-                <div class="row" *ngIf="index == 2">
-                                <div class="col-sm">
-                        
-                                                <h6 [@slideInDownOnEnter]>Nuevos productos </h6>
-                                                <h1 [@slideInLeftOnEnter]>Gafas Hipster</h1>
-                                                <p [@slideInUpOnEnter]>
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                        Nam dignissim enim vitae felis suscipit, vestibulum iaculis 
-                                                        urna vehicula. Ut sit amet felis non lorem dignissim lacinia 
-                                                        id quis lorem. 
-                                                </p>
-                                                
-                                        
-                                        
-                                </div>
-                                <div class="col-sm" style="display: flex; align-items: center; justify-content: flex-end">
-                                        <div class="discount-pop" [@rotateInDownRightOnEnter]>
-                                                <h6>Descuento</h6>
-                                                <h1>20%</h1>
-                                                <p>Compra Ya!</p>
-                                        </div>
-                                </div>
-                                
-                        </div>
-                <div class="buttons">
-                        <i class="fas fa-arrow-circle-left fa-lg" (click)="decreaseIndex()" style="margin-right: .5em;"></i>
-                        <span class="dot" [style.opacity]="index==1 ? '1':'0.5'"></span>
-                        <span class="dot" [style.opacity]="index==2 ? '1':'0.5'"></span>
-                        <i class="fas fa-arrow-circle-right fa-lg"(click)="increaseIndex()" style="margin-left: .5em;"></i>                
-                </div> 
+                
         </div>
-
 </div>

@@ -1,6 +1,41 @@
 <div class="home" (window:resize)="onResize($event)">
-    <app-card [imgurl]="imgurl" [description]="description"></app-card>
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+                <app-card [imgurl]="imgurl" [description]="description"></app-card>
+            </div>
+            <div class="col-md">
+                <div class="row">
+                    <div class="col"><app-card [imgurl]="imgurl" [description]="description"></app-card></div>
+                    <div class="col"><app-card [imgurl]="imgurl" [description]="description"></app-card></div>
+                </div>
+                <div class="row">
+                    <div class="col"><app-card [imgurl]="imgurl" [description]="description"></app-card></div>
+                    <div class="col"><app-card [imgurl]="imgurl" [description]="description"></app-card></div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-md"><app-card [imgurl]="imgurl" [description]="description"></app-card></div>
+            <div class="col-md"><app-card [imgurl]="imgurl" [description]="description"></app-card></div>
+            <div class="col-md"><app-card [imgurl]="imgurl" [description]="description"></app-card></div>
+            <div class="col-md"><app-card [imgurl]="imgurl" [description]="description"></app-card></div>
+        </div>
+    </div>
+    <div class="container">
+            <div class="title">
+                <h2>Recomendaciones personalizadas</h2>
+            </div>
+            <app-slider></app-slider>
+            <div class="title">
+                <h2>Comparte tus creaciones!</h2>
+            </div>
+            <app-instafeed></app-instafeed>
+    </div>
+    
 </div>
+
 
 
 <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-top: 60px">
