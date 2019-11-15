@@ -25,4 +25,8 @@ router.get('/', function(req, res, next) {
     };
     controller.research(data);
 });
+
+router.get('/new', function(req, res, next) {
+    controller.new(res);
+});
 module.exports = router;
