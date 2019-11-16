@@ -29,4 +29,11 @@ router.get('/', function(req, res, next) {
 router.get('/new', function(req, res, next) {
     controller.new(res);
 });
+router.get('/photo', function(req, res, next) {
+    let data={
+        name:req.query.id,
+        res:res
+    };
+    controller.photo(data);
+});
 module.exports = router;

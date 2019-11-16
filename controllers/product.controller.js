@@ -66,6 +66,23 @@ module.exports = {
                 sql.close();
             });
         });
+    },
+    getphoto: (data) =>{
+        let res = data.res;
+        sql.connect(config, function (err) {
+            if (err){console.log(err); res.send(errmsg);}//Mostrar error si existe    
+            var request = new sql.Request();
+            var query=`SELECT f.fotoURL
+            FROM Productos p JOIN Fotos f
+            ON p.productID=f.productID
+            WHERE f.productID=${data.id}`;
+            // Aplicar query a la db y guardar en recordset
+            request.query(query, function (err, recordset) {
+                if (err) console.log(err) //Si hay error mostrar
+                res.send(recordset.recordset);//Enviar resultados mediante APIREST
+                sql.close();
+            });
+        });
     }
 }
 
