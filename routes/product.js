@@ -20,7 +20,7 @@ router.get('/id', function(req, res, next) {
 
 router.get('/', function(req, res, next) {
     let data={
-        name:parseInt(req.query.name),
+        name:req.query.name,
         res:res
     };
     controller.research(data);
