@@ -3,7 +3,7 @@ const express = require("express")
 const bodyParser = require('body-parser')
 const compression = require('compression')
 const morgan = require('morgan')
-const cors = require('cors') //
+
 
 const app = express()
 const router = express.Router()
@@ -11,7 +11,7 @@ const router = express.Router()
 //app.disable('x-powered-by') //Esconder que la app está hecha en nodejs
 app.use(morgan('dev'))
 app.use(compression())
-app.use(cors({ origin: '*', optionsSuccessStatus: 200 }))
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use('/api', router)
