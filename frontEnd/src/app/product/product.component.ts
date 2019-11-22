@@ -12,14 +12,20 @@ export class ProductComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    localStorage.clear();
   }
 
   addToCart(){
-    var oldItems = JSON.parse(localStorage.getItem('cart'));
-
-    oldItems.push(this.product);
-
-    localStorage.setItem('cart', JSON.stringify(oldItems));
+    let a= [];
+    
+    a = JSON.parse(localStorage.getItem('cart'));
+    if(a==null){
+      a = a || [];
+    }
+    a.push(this.product);
+    localStorage.setItem('cart', JSON.stringify(a));
+    
+    console.log(localStorage.getItem('cart'))
   }
 
   setSc(bool){

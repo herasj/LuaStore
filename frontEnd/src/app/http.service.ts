@@ -22,6 +22,10 @@ export class HttpService {
     return this.http.get(this.API_URL+'product/new');
   }
 
+  postRegister(json){
+    return this.http.post(this.API_URL+'register', json)
+  }
+
   private jsonToQueryString(json) {
     return '?' + 
     Object.keys(json).map(function(key) {

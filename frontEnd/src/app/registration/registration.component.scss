@@ -8,13 +8,19 @@ input[type="text"]{
     border-radius: 15px;
     padding-left: 15px;
 }
+input[type="password"]{
+    margin: 1em 0;
+    width: 100%;
+    border-radius: 15px;
+    padding-left: 15px;
+}
 
 a{
     color: black;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     align-self: center;
-    padding: .6em;
+    padding: 1em;
     border-radius: 30px;
     text-decoration: none;
     &:hover{

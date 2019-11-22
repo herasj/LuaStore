@@ -8,14 +8,21 @@ import { Component, OnInit } from '@angular/core';
 export class ShopcartComponent implements OnInit {
 
   quantity;
-  subtotal: number;
+  subtotal: number = 0;
   ptotal;
   constructor() { }
 
   products;
 
   ngOnInit() {
-    this.products=localStorage.getItem("cart");
+    localStorage.clear();
+    this.products=JSON.parse(localStorage.getItem('cart'));
+    if(this.products!=null){
+      this.products.forEach((item, index) => {
+        this.ptotal[index]=item.precio;
+      });
+    }
+    console.log(this.products)
   }
 
   quantityChange(i){

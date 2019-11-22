@@ -12,7 +12,7 @@
                     <div class="col"><img src="{{product.fotoURL}}" alt=""></div>
                     <div class="col">{{product.descripcion}}</div>
                     <div class="col">{{product.precio}}</div>
-                    <div class="col"><input type="text" pInputText [(ngModel)]="quantity[i]" (ngModelChange)="quantityChange(i)">1</div>
+                    <div class="col"><input type="text" pInputText [(ngModel)]="quantity[i]" (ngModelChange)="quantityChange(i)"></div>
                     <div class="col">{{ptotal[i]}}</div>
             </div>
         </div>
@@ -20,7 +20,7 @@
             <p>Subtotal: <a>${{subtotal}}</a></p>
             <p>Dcto en productos: <a>$0</a></p>
             <p>Gastos de envio: <a>$8740</a></p>
-            <p id="total">Total: <a>{{subtotal+8740}}</a></p>
+            <p id="total">Total: <a>${{subtotal+8740}}</a></p>
             <button>Finalizar Compra</button>
         </div>
     </div>
