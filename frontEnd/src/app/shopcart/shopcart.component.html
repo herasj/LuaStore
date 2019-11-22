@@ -11,7 +11,7 @@
             <div *ngFor="let product of products; let i = index" class="row">
                     <div class="col"><img src="{{product.fotoURL}}" alt=""></div>
                     <div class="col">{{product.Nombre}}</div>
-                    <div class="col">{{product.precio}}</div>
+                    <div class="col">{{product.Precio}}</div>
                     <div class="col"><input type="text" pInputText [(ngModel)]="quantity[i]" (ngModelChange)="quantityChange(i)"></div>
                     <div class="col">{{ptotal[i]}}</div>
             </div>
