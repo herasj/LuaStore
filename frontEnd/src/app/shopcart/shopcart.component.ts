@@ -15,7 +15,7 @@ export class ShopcartComponent implements OnInit {
   products;
 
   ngOnInit() {
-    localStorage.clear();
+
     this.products=JSON.parse(localStorage.getItem('cart'));
     if(this.products!=null){
       this.products.forEach((item, index) => {

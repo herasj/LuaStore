@@ -12,7 +12,6 @@ export class ProductComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    localStorage.clear();
   }
 
   addToCart(){
