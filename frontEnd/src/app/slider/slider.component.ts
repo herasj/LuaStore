@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { timer, Subscription } from 'rxjs';
 import {NgxTinySliderSettingsInterface} from 'ngx-tiny-slider';
 
@@ -10,27 +10,28 @@ import {NgxTinySliderSettingsInterface} from 'ngx-tiny-slider';
 })
 export class SliderComponent implements OnInit {
 
+  @Input() products;
   tinySliderConfig: NgxTinySliderSettingsInterface;
   private timerSubscription: Subscription;
   index: number = 1; 
 
   ngOnInit() {
     this.tinySliderConfig = {
-      touch: true,
+      
       nav: false,
-      gutter: 10,
-      items:5,
+      
       controlsContainer: '#customize-controls',
-      swipeAngle: true,
-      controls: false,
+      swipeAngle: false,
+      loop: false,
       responsive: {
         350: {
-          items: 3,
-          controls: true,
-          edgePadding: 30,
+          items: 2,
+          gutter: 20,
+          touch:true,
+          edgePadding: 20
         },
         500: {
-          items: 4
+          items: 5
         }
       },
     };

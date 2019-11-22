@@ -5,13 +5,13 @@
     </div>
 
     <input type="text" pInputText [(ngModel)]="searching" [style.margin-left]="isInMobile ? '0em' : '1em'" (ngModelChange)="searchTriggered()" placeholder="Busca lo que quieras" (keydown.enter)="save()">
-    <a href="#"><i class="fas fa-search fa-fw 2x"></i></a>
+    <a href="#" routerLink="/search" [queryParams]="{prop: 'xxx'}" ><i class="fas fa-search fa-fw 2x"></i></a>
     
     <div class="search" [@collapse]="hidden">
         <nav>
             <ul id="list">
                 <li *ngFor="let result of results">
-                    <a class="name">{{result.name}}</a>
+                    <a routerLink="/search" (click)="setVisibleFalse" [queryParams]="{prop: [result.Nombre]}" class="name">{{result.Nombre}}</a>
                 </li>
             </ul>
         </nav>

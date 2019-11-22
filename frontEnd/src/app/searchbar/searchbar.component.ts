@@ -26,9 +26,8 @@ export class SearchbarComponent implements OnInit{
   
   
   searchTriggered(){
-    console.log(this.searching);
     if(this.searching){
-      this._http.getSearch(this.searching).subscribe(data=>{
+      this._http.getAutocomplete(this.searching).subscribe(data=>{
         if(Object.keys(data).length!=0){
           console.log(data);
           this.results=data;
@@ -43,5 +42,9 @@ export class SearchbarComponent implements OnInit{
 
   save(){
     console.log(this.searching);
+  }
+  
+  setVisibleFalse(){
+    this.hidden=true;
   }
 }

@@ -1,6 +1,8 @@
 <div class="card" (mouseover)="hoverOn=true" (mouseleave)="hoverOn=false"> 
     <img src="{{imgurl}}">
-    <div class="hov" *ngIf="hoverOn">
-        holiwe
+    <div class="hov" *ngIf="hoverOn" [@fadeInOnEnter] [@fadeOutOnLeave]>
+        <p>
+            Descripcion de esta promoción
+        </p>
     </div>
 </div>

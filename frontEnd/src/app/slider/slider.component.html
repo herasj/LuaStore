@@ -1,26 +1,25 @@
-<div class="tnslider">
+<div class="tnslider" *ngIf="products">
         <ngx-tiny-slider [config]="tinySliderConfig">
-                <ng-container class="items" style="text-align: center;">
+                <ng-container class="items" >
                         <div class="item">
-                                <app-product></app-product>
+                                <app-product [product]="products[0]"></app-product>
                         </div>
                         <div class="item">
-                                <app-product></app-product>
+                                <app-product [product]="products[1]"></app-product>
                         </div>
                         <div class="item">
-                                <app-product></app-product>
+                                <app-product [product]="products[2]"></app-product>
                         </div>
                         <div class="item">
-                                <app-product></app-product>
+                                <app-product [product]="products[3]"></app-product>
                         </div>
                         <div class="item">
-                                <app-product></app-product>
+                                <app-product [product]="products[4]"></app-product>
                         </div>
                         <div class="item">
-                                <app-product></app-product>
+                                <app-product [product]="products[5]"></app-product>
                         </div>
                 </ng-container>
-                
         </ngx-tiny-slider>
         <div class="customize-tools">
                 <div class="controls" id="customize-controls">
@@ -31,6 +30,5 @@
                         <i class="fa fa-arrow-right" aria-hidden="true"></i>
                         </div>
                 </div>
-                
         </div>
 </div>

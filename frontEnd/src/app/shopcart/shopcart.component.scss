@@ -1,0 +1,27 @@
+.container{
+    padding-top: 7em;
+    p{
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        a{
+            font-weight: normal;
+        }
+    }
+    #total{
+        padding: .7em .4em;
+        background-color: lightgray;
+    }
+    button{
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        border-radius: 30px;
+        background: white;
+        transition: 0.3s;
+    }
+    button:hover{
+        color:white;
+        background: black;
+    }
+}

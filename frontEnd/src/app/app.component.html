@@ -1,4 +1,5 @@
-<nav class="navbar fixed-top navbar-expand-md  navbar-dark transparent" style="width: 100%; flex-flow: row;" [style.padding]="isInMobile ? '.5em 1em' : '.5em 20%'" (window:resize)="onResize($event)">
+<nav class="navbar fixed-top navbar-expand-md  navbar-dark transparent" style="width: 100%; flex-flow: row;"  (window:resize)="onResize($event)">
+  <div class="container" [style.padding]="isInMobile ? '.5em .6em' : '.5em 0'">  
     <a href="#" routerLink="/" class="logo"><img src="assets/logo.png" style="max-height: 40px;"></a>
     <div class="searchbar" [style.width]="isInMobile ? '100%' : '40%'" [style.margin-left]="isInMobile ? '0em' : '2%'">
       <app-searchbar [isInMobile]="isInMobile"></app-searchbar>
@@ -9,7 +10,7 @@
           <div class="userwhole" #user >
               <a class="nav-link" href="#" onclick="return false;"><i class="fas fa-user"></i>Usuario</a>
               <div style="position: absolute; padding-top: 1.3em; display: flex; right:-15px;">
-                <div class="userTile" [@fadeIn]="showingUser" [hidden]="!showingUser">
+                <div class="userTile" [@fadeInOnEnter] *ngIf="showingUser">
                   <h5>Iniciar sesión</h5>
                   <p>Email</p>
                   <input type="email" placeholder="Email">
@@ -17,28 +18,104 @@
                   <input type="password" placeholder="Contraseña">
                   <a href="#">Iniciar sesión</a>
                   <h6>ó</h6>
-                  <p id="register">No tienes cuenta? <span>Registrate</span></p>
+                  <p id="register">No tienes cuenta? <span routerLink="/register" (click)="showingUser=false">Registrate</span></p>
                 </div>
               </div>
           </div>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#" id="shopping" onclick="return false;"><i class="fas fa-shopping-cart" id="shopping"></i>Carrito</a>
+          <a class="nav-link" href="#" routerLink="/shoppingCart" id="shopping" onclick="return false;"><i class="fas fa-shopping-cart" id="shopping"></i>Carrito</a>
           
         </li>
       </ul>
     </div>
+  </div>
   </nav>
-  
-<nav id="categorias" *ngIf="!isInMobile" class="navbar navbar-expand-md fixed-top navbar-light" style="top:61px; background:white; list-style: none;z-index: 100;">
-  <li><a href="#" class="hvr-underline-from-center">Inicio</a></li>
-  <li><a href="#" class="hvr-underline-from-center">Hombres</a></li>
-  <li><a href="#" class="hvr-underline-from-center">Mujeres</a></li>
-  <li><a href="#" class="hvr-underline-from-center">Joyeria</a></li>
-  <li><a href="#" class="hvr-underline-from-center">Zapatos</a></li>
-</nav>
+
+
+  <nav id="categorias" *ngIf="!isInMobile" class="navbar navbar-expand-md fixed-top navbar-light" style="top:61px; background:white; list-style: none;z-index: 100;">
+    <div class="container">
+        <li><a href="#" class="hvr-underline-from-center"><i class="fas fa-bars"></i>Inicio</a></li>
+        <li><a href="#" class="hvr-underline-from-center"><i class="fas fa-glass-cheers"></i>Fiesta</a></li>
+        <li><a href="#" class="hvr-underline-from-center"><i class="fas fa-cut"></i>Moda</a></li>
+        <li><a href="#" class="hvr-underline-from-center"><i class="fas fa-home"></i>Hogar</a></li>
+        
+        <li><a href="#" class="hvr-underline-from-center"><i class="fas fa-heart"></i>Cuidado personal</a></li>
+        <li><a href="#" class="hvr-underline-from-center"><i class="fas fa-hat-cowboy-side"></i>Cuero</a></li>
+    </div>
+    
+  </nav>
+
+
 
 <router-outlet></router-outlet>
+
+<section class="footer-section">
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-4 col-sm-6">
+        <div class="footer-widget about-widget">
+          <h2>De nosotros</h2>
+          <p>Donec vitae purus nunc. Morbi faucibus erat sit amet congue mattis. Nullam frin-gilla faucibus urna, id dapibus erat iaculis ut. Integer ac sem.</p>
+          <img src="https://lua-store.netlify.com/img/cards.png" alt="">
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="footer-widget about-widget">
+          <h2>Preguntas</h2>
+          <ul>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Track Orders</a></li>
+            <li><a href="">Returns</a></li>
+            <li><a href="">Jobs</a></li>
+            <li><a href="">Shipping</a></li>
+            <li><a href="">Blog</a></li>
+          </ul>
+          <ul>
+            <li><a href="">Partners</a></li>
+            <li><a href="">Bloggers</a></li>
+            <li><a href="">Support</a></li>
+            <li><a href="">Terms of Use</a></li>
+            <li><a href="">Press</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-sm-6">
+        <div class="footer-widget contact-widget">
+          <h2>Contacto</h2>
+          <div class="con-info">
+            <p><span>C.</span>Your Company Ltd </p>
+          </div>
+          <div class="con-info">
+            <p><span>B.</span>1481 Creekside Lane  Avila Beach, CA 93424, P.O. BOX 68 </p>
+          </div>
+          <div class="con-info">
+            <p><span>T.</span>+53 345 7953 32453</p>
+          </div>
+          <div class="con-info">
+            <p><span>E.</span>office@youremail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="social-links-warp">
+    <div class="container">
+      <div class="social-links">
+        <a href="" class="instagram"><i class="fab fa-instagram fa-2x"></i><span>INSTAGRAM</span></a>
+        <a href="" class="google-plus"><i class="fab fa-google-plus fa-2x"></i><span>G+PLUS</span></a>
+        <a href="" class="pinterest"><i class="fab fa-pinterest fa-2x"></i><span>PINTEREST</span></a>
+        <a href="" class="facebook"><i class="fab fa-facebook fa-2x"></i><span>FACEBOOK</span></a>
+        <a href="" class="twitter"><i class="fab fa-twitter fa-2x"></i><span>TWITTER</span></a>
+        <a href="" class="youtube"><i class="fab fa-youtube fa-2x"></i><span>YOUTUBE</span></a>
+        <a href="" class="tumblr"><i class="fab fa-tumblr-square fa-2x"></i><span>TUMBLR</span></a>
+      </div>
+        <p id="copyr" class="text-white text-center mt-5">Copyright ©2019 | Todos los derechos reservados </p>
+      </div>
+      </div>
+  </section>
   
   
  

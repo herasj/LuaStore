@@ -1,11 +1,11 @@
 import { Component,  OnInit, HostListener, ViewChild, ElementRef, } from '@angular/core';
-import { fadeInAnimation, fadeOutAnimation } from 'angular-animations';
+import { fadeInOnEnterAnimation } from 'angular-animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [fadeInAnimation({duration:300}),fadeOutAnimation({duration:300})]
+  animations: [fadeInOnEnterAnimation({duration:300})]
   
 })
 export class AppComponent implements OnInit {

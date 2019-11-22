@@ -14,6 +14,9 @@ import { CardComponent } from './card/card.component';
 import {NgxTinySliderModule} from 'ngx-tiny-slider';
 import { InstafeedComponent } from './instafeed/instafeed.component';
 import { ProductComponent } from './product/product.component';
+import { ShopcartComponent } from './shopcart/shopcart.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { SearchingComponent } from './searching/searching.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { ProductComponent } from './product/product.component';
     SliderComponent,
     CardComponent,
     InstafeedComponent,
-    ProductComponent
+    ProductComponent,
+    ShopcartComponent,
+    RegistrationComponent,
+    SearchingComponent
   ],
   exports:[
     NgxTinySliderModule

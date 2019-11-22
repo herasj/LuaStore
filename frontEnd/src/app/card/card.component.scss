@@ -1,4 +1,5 @@
 .card{
+    cursor: pointer;
     position: relative;
     margin-top: 0.8em;
     img{
@@ -6,9 +7,20 @@
         width: 100%;
     }
     .hov{
+        
         position: absolute;
-        top: 70%;
-        padding: 1em;
+        display: flex;
+        bottom: 20%;
+        left: 0;
+        max-width: 90%;
+        background-color: rgba(0, 0, 0, 0.473);
+        padding: 1.2em 20%;
+        p{
+            color: white;
+            font-size: 14px;
+            margin: 0;
+            font-weight: bold;
+        }
     }
 
 }

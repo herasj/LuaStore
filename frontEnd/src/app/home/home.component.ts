@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { HttpService} from '../http.service';
+import { asLiteral } from '@angular/compiler/src/render3/view/util';
 
 @Component({
   selector: 'app-home',
@@ -7,16 +9,25 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  isInMobile: boolean ;
+  isInMobile: boolean;
+  newProductsReady: boolean;
   clickCounter: number = 0;
+  newProducts;
   name: string='Aja cv';
   imgurl: string="https://stoffe.kawaiifabric.com/images/product_images/thickbox_img/kawaii-fabric-with-colourful-jigsaw-puzzle-pieces-USA-180087-1.JPG";
   description: string="description";
 
-
-  constructor() { }
+  constructor(private _http: HttpService) { }
 
   ngOnInit() {
+    this._http.getNewProducts().subscribe(data=>{
+      if(Object.keys(data).length!=0){
+        this.newProducts = data;
+        this.newProductsReady =true;
+      }
+      else console.log("error");
+    })
+    
   }
 
   countClick(){

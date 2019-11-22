@@ -1,24 +1,30 @@
 .tnslider{
     position: relative;
-
-    .controls{
+    .prev{
+        cursor: pointer;
         position: absolute;
-        top: 50%;
-        display: flex;
-        flex-flow: row;
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        .prev{
-            display: flex;
-            color: white;
-        }
-        .next{
-            display: flex;
-            color: white;
-            margin-left: auto;
-            justify-self: flex-end;
-        }
+        left: 0;
+        bottom: 50%;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.212);
+        transition: 0.5s;
+        padding: .8em .5em;
+        
     }
-    
+    .prev:hover{
+        background-color: rgba(0, 0, 0, 0.699);
+    }
+    .next{
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        bottom: 50%;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.212);
+        transition: 0.5s;
+        padding: .8em .5em;
+    }
+    .next:hover{
+        background-color: rgba(0, 0, 0, 0.699);
+    }
 }

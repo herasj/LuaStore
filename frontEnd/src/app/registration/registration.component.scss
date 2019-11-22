@@ -1,0 +1,24 @@
+.container{
+    padding-top: 6em;
+}
+
+input[type="text"]{
+    margin: 1em 0;
+    width: 100%;
+    border-radius: 15px;
+    padding-left: 15px;
+}
+
+a{
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    align-self: center;
+    padding: .6em;
+    border-radius: 30px;
+    text-decoration: none;
+    &:hover{
+        background: black;
+        color: white;
+    }
+}

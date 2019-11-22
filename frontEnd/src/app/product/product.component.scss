@@ -1,6 +1,36 @@
 .product{
-    max-width: 130px;
-    img{
-        max-height: 130px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding: 0;
+    flex-flow: column;
+    margin: 1em 0;
+    .main{
+        cursor: pointer;
+        transition: 0.3s;
+        border-color: lightgray!important;
+        border: 1px;
+        border-style: solid;
+        text-align: center;
+        
     }
+    .main:hover{
+        transform: scale(1.1);
+        margin: 0;
+    }
+    .title{
+        margin: .5em 0;
+    }
+    .price{
+        margin: .2em 0;
+        color: rgb(60, 173, 177);
+        font-weight: bold;
+    }
+    img{
+        width: 100%;
+        height: auto;
+    }
+    
+
+    
 }
