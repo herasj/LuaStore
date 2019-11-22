@@ -18,12 +18,9 @@ export class SearchbarComponent implements OnInit{
 
   constructor(private _http: HttpService) { }
 
-  
   ngOnInit(){
 
   }
-  
-  
   
   searchTriggered(){
     if(this.searching){
@@ -37,7 +34,6 @@ export class SearchbarComponent implements OnInit{
       })
     }
     else this.hidden=true;
-    
   }
 
   save(){

@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   newProducts;
   name: string='Aja cv';
   imgurl: string="https://stoffe.kawaiifabric.com/images/product_images/thickbox_img/kawaii-fabric-with-colourful-jigsaw-puzzle-pieces-USA-180087-1.JPG";
-  description: string="description";
+  description: string="Disfruta de nuestras ofertas y diversos estilos!";
 
   constructor(private _http: HttpService) { }
 

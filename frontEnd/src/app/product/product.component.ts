@@ -8,10 +8,21 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProductComponent implements OnInit {
 
   @Input() product;
-
+  sc: boolean;
   constructor() { }
 
   ngOnInit() {
   }
 
+  addToCart(){
+    var oldItems = JSON.parse(localStorage.getItem('cart'));
+
+    oldItems.push(this.product);
+
+    localStorage.setItem('cart', JSON.stringify(oldItems));
+  }
+
+  setSc(bool){
+    this.sc=bool;
+  }
 }

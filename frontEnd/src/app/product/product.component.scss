@@ -6,7 +6,6 @@
     flex-flow: column;
     margin: 1em 0;
     .main{
-        cursor: pointer;
         transition: 0.3s;
         border-color: lightgray!important;
         border: 1px;
@@ -29,6 +28,18 @@
     img{
         width: 100%;
         height: auto;
+    }
+    i{  
+        cursor: pointer;
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        transition: 0.2s;
+        color: rgba(255, 255, 255, 0.808)
+    }
+    i:hover{
+        color: black;
+
     }
     
 

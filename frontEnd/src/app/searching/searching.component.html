@@ -1,6 +1,7 @@
 <div class="container">
-    <p>searching works!</p>
-    <button (click)="queryAdd('filter','holi')"></button>
-    <button (click)="logq()"></button>
+    <div class="row">
+        <div *ngFor="let product of products" class="col-sm-2 col-6"><app-product [product]="product"></app-product></div>
+    </div>
+    
 </div>
 

@@ -34,9 +34,11 @@ export class SearchingComponent implements OnInit {
     this._http.getSearch(this.querys).subscribe(data=>{
       if(Object.keys(data).length!=0){
         this.products=data;
+        console.log(this.products)
       }
       else{
         console.log("Error en el request we")
+        console.log(data);
       }
     });
   }

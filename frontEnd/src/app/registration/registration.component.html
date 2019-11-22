@@ -2,10 +2,10 @@
     <h2>Crear nueva cuenta</h2>
     <div class="row">
         <div class="col-sm-4">
-            <input type="text" placeholder="Nombre">
+            <input type="text" [(ngModel)]="" placeholder="Nombre">
         </div>
         <div class="col-sm-4">
-            <input type="text" placeholder="Email">
+            <input type="text" [(ngModel)]="" placeholder="Email">
         </div>
         <div class="w-100"></div>
         <div class="col-sm-4">
@@ -14,8 +14,14 @@
         <div class="col-sm-4">
             <input type="text" placeholder="Repita la contraseña">
         </div>
+        <div class="col-sm-4">
+            <input type="text" placeholder="Direccion">
+        </div>
+        <div class="col-sm-4">
+            <input type="text" placeholder="Telefono">
+        </div>
     </div>
     <p><input type="checkbox" name="" id="">Acepto Terminos y condiciones</p>
-    <a href="#">Registrar</a>
+    <a href="#" (click)="register()">Registrar</a>
 </div>
 
