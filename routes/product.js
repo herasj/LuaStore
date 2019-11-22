@@ -36,4 +36,11 @@ router.get('/photo', function(req, res, next) {
     };
     controller.photo(data);
 });
+router.post('/url', function(req, res, next) {
+    let data={
+        name:req.query.id,
+        res:res
+    };
+    controller.changeurl(data);
+});
 module.exports = router;
