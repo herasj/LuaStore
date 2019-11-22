@@ -17,9 +17,28 @@ Cronograma de actividades, teniendo como Semana 1 la que inicia el 23 de septiem
 Cualquier duda o sugerencia con el cronograma o los requerimientos, comentar por el canal general de Slack.
 
 ## Back End
-Prueba de API_REST.
-1. Ruta: api/productos/"Producto".
-2. Debe retornar un mensaje de conexión con la api.
+Dirección: ec2-3-83-217-87.compute-1.amazonaws.com:3000
+Rutas:
+> POST /user
+Crear usuario, enviar un JSON como parametro.
+> GET /user
+Obtener datos del usuario, enviar email como query.
+
+> GET /product/name
+Obtiene un autocompletado, enviar el name como query.
+
+> GET /product/id 
+Obtiene todos los datos de un product, enviar id como query.
+
+> GET /product/new
+Obtiene los 10 productos más recientes.
+
+> GET /product/photo
+Obtiene la foto segun el productid, enviar id como query.
+
+> POST /product/url
+Cambia la url de la foto de un producto segun su id, enviar un json como parametro que contenga url y id.
+**EN PRUEBA - Puede tener errores**
 
 ## Front End
 Para visualizar lo que corresponde a Front end:
