@@ -34,6 +34,10 @@ Obtener datos del usuario, enviar email como query.
 
 Obtiene un autocompletado, enviar el name como query.
 
+> GET /product
+
+Obtiene todos los datos de un product, enviar name como query.
+
 > GET /product/id
 
 Obtiene todos los datos de un product, enviar id como query.
