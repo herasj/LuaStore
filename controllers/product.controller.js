@@ -48,17 +48,10 @@ module.exports = {
         sql.connect(config, function (err) {
             if (err){console.log(err); res.send(errmsg);}//Mostrar error si existe    
             var request = new sql.Request();
-            var query=`SELECT TOP (10) [productID]
-            ,[Nombre]
-            ,[Descripcion]
-            ,[Precio]
-            ,[Dcto]
-            ,[Categoria]
-            ,[Subcategoria]
-            ,[Referencia]
-            ,[Fecha_Creacion]
-        FROM [dbo].[Productos]
-        ORDER BY Fecha_Creacion DESC`;
+            var query=`SELECT TOP (10) p.Nombre, f.fotoURL, p.Precio
+            FROM [dbo].[Productos] p JOIN Fotos f
+            ON p.productID=f.productID
+            ORDER BY Fecha_Creacion DESC`;
             // Aplicar query a la db y guardar en recordset
             request.query(query, function (err, recordset) {
                 if (err) console.log(err) //Si hay error mostrar
