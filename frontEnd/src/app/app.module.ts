@@ -16,6 +16,8 @@ import { ProductComponent } from './product/product.component';
 import { ShopcartComponent } from './shopcart/shopcart.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { SearchingComponent } from './searching/searching.component';
+import { ProductpageComponent } from './productpage/productpage.component';
+import { MeteradderComponent } from './meteradder/meteradder.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { SearchingComponent } from './searching/searching.component';
     ProductComponent,
     ShopcartComponent,
     RegistrationComponent,
-    SearchingComponent
+    SearchingComponent,
+    ProductpageComponent,
+    MeteradderComponent
   ],
   exports:[
     NgxTinySliderModule

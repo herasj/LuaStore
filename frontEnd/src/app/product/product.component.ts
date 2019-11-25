@@ -16,13 +16,29 @@ export class ProductComponent implements OnInit {
 
   addToCart(){
     let a= [];
-    
+    let b= []
+    let exist: boolean = false;
+    let i;
     a = JSON.parse(localStorage.getItem('cart'));
-    if(a==null){
-      a = a || [];
+    b = JSON.parse(localStorage.getItem('cart-meters'));
+    a.forEach((element, index) => {
+      if (this.product.Nombre==element.Nombre){
+        exist=true;
+        i=index;
+      }
+    });
+    if(!exist){
+      if(a==null){
+        a = a || [];
+      }
+      a.push(this.product);
+      localStorage.setItem('cart', JSON.stringify(a));
+    }else{
+      if(b==null){
+        
+      }
     }
-    a.push(this.product);
-    localStorage.setItem('cart', JSON.stringify(a));
+    
     
     console.log(localStorage.getItem('cart'))
   }
@@ -30,4 +46,13 @@ export class ProductComponent implements OnInit {
   setSc(bool){
     this.sc=bool;
   }
+
+  getPrice(){
+    let price: string;
+    let snum: string= this.product.Precio.toString();
+    price = snum.substring(0, snum.length-3)+"."+snum.substring(snum.length-3,snum.length)
+
+    return price;
+  }
+  
 }

@@ -6,12 +6,12 @@
     flex-flow: column;
     margin: 1em 0;
     .main{
+        cursor: pointer;
         transition: 0.3s;
         border-color: lightgray!important;
         border: 1px;
         border-style: solid;
         text-align: center;
-        
     }
     .main:hover{
         transform: scale(1.1);
@@ -22,8 +22,7 @@
     }
     .price{
         margin: .2em 0;
-        color: rgb(60, 173, 177);
-        font-weight: bold;
+        color: #E74F5A;
     }
     img{
         width: 100%;

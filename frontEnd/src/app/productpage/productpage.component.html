@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row" *ngIf="product">
+        <div class="col-sm-6">
+            <img src="{{product[0].fotoURL}}" alt="">
+        </div>
+        <div class="col-sm-6">
+            <h3>{{product[0].Nombre}}</h3>
+            <h2>{{getPrice()}}$ COP<h6>IVA incluido</h6></h2>
+            
+            <div class="adding">
+                <p>Metros:</p>
+                <app-meteradder [(meters)]="meters" id="adder" ></app-meteradder>
+                <button class="addCart">Añadir al carrito</button>
+            </div>
+            <div class="details">
+                <p id="title">Caracteristicas</p>
+                <p>Ancho: 150cm</p>
+                <p>Composición:  100% Poliester</p>
+                <p>Tela indicada para:  vestidos, faldas, pantalones, vestidos de fiesta, blusas</p>
+                <p>Textura:  suave</p>
+                <p>Caída: caído</p>
+                <img class="warnings" src="https://tiendatelas.com/themes/tntls/img/feature_13.svg" title="Lavado a una temperatura máxima de 30 ºC" alt="Lavado a una temperatura máxima de 30 ºC">
+                <img class="warnings" src="https://tiendatelas.com/themes/tntls/img/feature_18.svg" title="Planchado temperatura baja110ºC: Seda Natural, Rayón, Acetato o Acrílico." alt="Planchado temperatura baja110ºC: Seda Natural, Rayón, Acetato o Acrílico.">
+                <img class="warnings" src="https://tiendatelas.com/themes/tntls/img/feature_21.svg" title="No utilizar Lejia" alt="No utilizar Lejia">
+                <img class="warnings" src="https://tiendatelas.com/themes/tntls/img/feature_22.svg" title="No Limpiar en Seco" alt="No Limpiar en Seco">
+            </div>
+            <div class="description">
+                <p id="title">Descripción</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit, 
+                    quam sed fermentum facilisis, metus tellus imperdiet lorem, auctor porta purus 
+                    nibh vel lectus. Vestibulum ac blandit quam. Integer sagittis dignissim varius. 
+                    Aliquam hendrerit tempus erat id vehicula. Sed accumsan efficitur metus. Proin 
+                    tincidunt erat sit amet risus porttitor, sed suscipit risus vulputate. Nulla ut 
+                    quam turpis. Praesent eget sapien cursus, facilisis diam nec, suscipit metus.</p>
+            </div>
+            <div class="share">
+                <a><i class="fas fa-share-alt fa-md"></i>    Compartir en: </a>
+                <i class="fab fa-facebook fa-lg"></i>
+                <i class="fab fa-whatsapp fa-lg"></i>
+                <i class="fab fa-twitter fa-lg"></i>
+            </div>
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,25 @@
+.adder{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    #meter{
+        width: 45px;
+        border-radius: 10px;
+        border-style: solid;
+        outline: none;
+        text-align: center;
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+        appearance: textfield;
+    }  
+    #meter::-webkit-inner-spin-button, 
+    #meter::-webkit-outer-spin-button { 
+        -webkit-appearance: none;
+    }
+}
+.buttons{
+    cursor: pointer;
+    display:flex;
+    flex-flow: column;
+    margin-left: 10px;
+}

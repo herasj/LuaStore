@@ -1,0 +1,7 @@
+<div class="adder">
+    <input [(ngModel)]="meters" (ngModelChange)="eventHandler($event)" type="number" #meter id="meter" min="1" step="0.5" value="">
+    <div class="buttons">
+        <i (click)="inc()" class="far fa-plus-square"></i>
+        <i (click)="dec()" class="far fa-minus-square"></i>
+    </div>
+</div>

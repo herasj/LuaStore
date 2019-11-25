@@ -22,6 +22,7 @@ export class ShopcartComponent implements OnInit {
       this.products.forEach((item, index) => {
         this.ptotal[index]=item.Precio;
         this.quantity[index]=1;
+        this.subtotal+=parseInt(item.Precio)*parseInt(this.quantity[index]);
       });
     }
     console.log(this.products)
@@ -31,7 +32,6 @@ export class ShopcartComponent implements OnInit {
     this.products.forEach((item, index) => {
       this.subtotal+=parseInt(item.Precio)*parseInt(this.quantity[index]);
     });
-    this.ptotal[i]=this.products[i].precio*this.quantity[i];
-
+    this.ptotal[i]=this.products[i].Precio*this.quantity[i];
   }
 }

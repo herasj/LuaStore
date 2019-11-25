@@ -6,7 +6,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 })
 export class HttpService {
   
-  API_URL: string = "http://ec2-3-83-217-87.compute-1.amazonaws.com:3000/";
+  API_URL: string = "http://ec2-3-86-139-83.compute-1.amazonaws.com:3000/";
 
   constructor(private http: HttpClient) { }
   
@@ -16,6 +16,10 @@ export class HttpService {
 
   getSearch(params){
     return this.http.get(this.API_URL+'product'+this.jsonToQueryString(params));
+  }
+
+  getProduct(name){
+    return this.http.get(this.API_URL+'product?name='+name);
   }
 
   getNewProducts(){

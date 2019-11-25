@@ -25,6 +25,7 @@ export class SearchbarComponent implements OnInit{
   searchTriggered(){
     if(this.searching){
       this._http.getAutocomplete(this.searching).subscribe(data=>{
+        console.log(this.searching);
         if(Object.keys(data).length!=0){
           console.log(data);
           this.results=data;
