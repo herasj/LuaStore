@@ -12,7 +12,8 @@ import { Router, NavigationEnd } from '@angular/router';
 export class AppComponent implements OnInit {
 
 
-  @ViewChild("user",{static: false}) user_tile: ElementRef;  
+  @ViewChild("user",{static: false}) user_tile: ElementRef;
+
   title = 'frontEnd';
   isInMobile: boolean;
   showingUser: boolean;
@@ -22,6 +23,7 @@ export class AppComponent implements OnInit {
   unoexist: boolean = false;
   err: boolean = false;
   logged: boolean = false;
+  
   constructor(private router: Router) { }
   
   ngOnInit(){
