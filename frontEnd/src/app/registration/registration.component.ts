@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {HttpService} from '../http.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { HttpService } from '../http.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -7,7 +8,7 @@ import {HttpService} from '../http.service';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
-
+  
   nombre;
   apellidos;
   email;
@@ -21,7 +22,7 @@ export class RegistrationComponent implements OnInit {
   erra: boolean = false;
   accept: boolean = false;
 
-  constructor(private _http: HttpService) { }
+  constructor(private _http: HttpService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -37,6 +38,7 @@ export class RegistrationComponent implements OnInit {
         email:this.email,
         pass:this.contrasena,
       };
+      this.router.navigate(['']);
       localStorage.setItem('userInfo', JSON.stringify(js))
     }else{
       if(!this.accept){
