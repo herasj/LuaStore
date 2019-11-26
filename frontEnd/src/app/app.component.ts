@@ -16,7 +16,12 @@ export class AppComponent implements OnInit {
   title = 'frontEnd';
   isInMobile: boolean;
   showingUser: boolean;
-
+  user;
+  userEmail;
+  password;
+  unoexist: boolean = false;
+  err: boolean = false;
+  logged: boolean = false;
   constructor(private router: Router) { }
   
   ngOnInit(){
@@ -28,6 +33,7 @@ export class AppComponent implements OnInit {
       }
       window.scrollTo(0, 0)
     });
+
   }
   
   @HostListener('document:click', ['$event'])
@@ -38,6 +44,22 @@ export class AppComponent implements OnInit {
     else {
       this.showingUser = false
     };
+  }
+
+  checkUser(){
+    if(this.userEmail!=null&&this.password!=null){
+      let a = JSON.parse(localStorage.getItem('userInfo'));
+      if(a!=null)
+        this.unoexist=true;
+      else{
+        if(a.user==this.userEmail&&a.password==this.password){
+          this.logged=true;
+          this.user=a;
+        }else{
+          this.err=true;
+        }
+      }
+    }
   }
 
   onResize(event){

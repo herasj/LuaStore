@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Example 1</title>
+  </head>
+  <body>
+    <header class="clearfix">
+      <div id="logo">
+        <img src="../../assets/logo.gif" style="width:200px">
+      </div>
+      <h1>INVOICE #000001</h1>
+      <div id="company" class="clearfix">
+        <div>Lua Store</div>
+        <div>Universidad del Norte<br /> Via Puerto Colombia</div>
+        <div>(+57) 301 3194342</div>
+        <div><a href="mailto:archila@uninorte.edu.co">archila@uninorte.edu.co</a></div>
+      </div>
+      <div id="project">
+        <div><span>CLIENT</span> Leonard</div>
+        <div><span>ADDRESS</span> 796 Silver Harbour, TX 79273, US</div>
+        <div><span>EMAIL</span> <a href="mailto:john@example.com">john@example.com</a></div>
+        <div><span>DATE</span> August 17, 2015</div>
+        <div><span>DUE DATE</span> September 17, 2015</div>
+      </div>
+    </header>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th class="service">PRODUCT</th>
+            <th class="desc">DESCRIPTION</th>
+            <th>PRICE</th>
+            <th>QTY</th>
+            <th>TOTAL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of products; let i = index">
+            <td class="service">{{item.Nombre}}</td>
+            <td class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac finibus augue. Donec tempor ac sem non tincidunt. Duis pharetra nibh nibh, sed pretium urna aliquam sed.</td>
+            <td class="unit">${{getPrice(item.Precio)}}</td>
+            <td class="qty">{{quantity[i]}}</td>
+            <td class="total">${{getPrice(item.Precio*quantity[i])}}</td>
+          </tr>
+          <tr>
+            <td colspan="4">SUBTOTAL</td>
+            <td class="total">${{getPrice(subtotal)}}</td>
+          </tr>
+          <tr>
+            <td colspan="4">IVA 19%</td>
+            <td class="total">${{getPrice(subtotal*0.19)}}</td>
+          </tr>
+          <tr>
+            <td colspan="4" class="grand total">GRAND TOTAL</td>
+            <td class="grand total">${{getPrice(subtotal*0.19+subtotal)}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="notices">
+        <div>NOTICE:</div>
+        <div class="notice">A finance charge of 1.5% will be made on unpaid balances after 30 days.</div>
+      </div>
+    </main>
+  </body>
+</html>
