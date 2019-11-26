@@ -41,7 +41,9 @@ export class SearchbarComponent implements OnInit{
     console.log(this.searching);
   }
   
-  setVisibleFalse(){
+  setVisibleFalse(searching){
+    if(searching)
+      this.searching=searching;
     this.hidden=true;
   }
 }

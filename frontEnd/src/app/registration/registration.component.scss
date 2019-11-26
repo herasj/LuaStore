@@ -2,6 +2,12 @@
     padding-top: 6em;
 }
 
+input{
+    border-style: solid;
+    outline: none;
+    border-color: lightgray;
+}
+
 input[type="text"]{
     margin: 1em 0;
     width: 100%;
@@ -15,16 +21,27 @@ input[type="password"]{
     padding-left: 15px;
 }
 
-a{
-    color: black;
+a{  
+    background-color: #39CD8E;
+    color: white!important;
     font-size: 16px;
     font-weight: bold;
     align-self: center;
     padding: 1em;
     border-radius: 30px;
     text-decoration: none;
+    transition: 0.5s all;
     &:hover{
-        background: black;
-        color: white;
+        background: #398464;
+        color:white;
     }
+}
+
+p.errmsg{
+    color: red;
+    font-size: 14px;
+}
+
+#checkbox{
+    margin-right: 10px;
 }

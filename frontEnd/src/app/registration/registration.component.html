@@ -25,7 +25,9 @@
             <input type="text" [(ngModel)]="fecha" placeholder="Birthday">
         </div>
     </div>
-    <p><input type="checkbox" name="" id="">Acepto Terminos y condiciones</p>
-    <a href="#" (click)="register()">Registrar</a>
+    <p class="errmsg" *ngIf="err">Por favor ingrese todos los campos correctamente</p>
+    <p class="errmsg" *ngIf="erra">Para poder registrarse tiene que aceptar los Términos y Condiciones</p>
+    <p><input [(ngModel)]="accept" type="checkbox" id="checkbox">Acepto Terminos y condiciones</p>
+    <a (click)="register()">Registrar</a>
 </div>
 

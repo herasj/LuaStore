@@ -16,13 +16,18 @@ export class RegistrationComponent implements OnInit {
   telefono;
   fecha;
   id= 43;
+
+  err: boolean = false;
+  erra: boolean = false;
+  accept: boolean = false;
+
   constructor(private _http: HttpService) { }
 
   ngOnInit() {
   }
 
   register(){
-    if(this.nombre!=null&&this.email!=null){
+    if(this.nombre!=null&&this.email!=null&&this.accept){
       var js={
         name:this.nombre,
         lastname:this.apellidos,
@@ -33,7 +38,16 @@ export class RegistrationComponent implements OnInit {
         pass:this.contrasena,
       };
       localStorage.setItem('userInfo', JSON.stringify(js))
-      console.log(localStorage.getItem('userInfo'));
+    }else{
+      if(!this.accept){
+        this.erra=true;
+        this.err=false;
+      }
+      else{
+        this.erra=false;
+        this.err=true;
+      }
+        
     }
   }
 }

@@ -11,15 +11,24 @@
               <a class="nav-link" href="#" onclick="return false;"><i class="fas fa-user"></i>Usuario</a>
               <div style="position: absolute; padding-top: 1.3em; display: flex; right:-15px;">
                 <div class="userTile" [@fadeInOnEnter] *ngIf="showingUser" >
-                  <h5 *ngIf="!logged">Iniciar sesión</h5>
-                  <p *ngIf="!logged">Email</p>
-                  <input type="email" *ngIf="!logged" placeholder="Email" [(ngModel)]="userEmail">
-                  <p *ngIf="!logged">Contraseña</p>
-                  <input *ngIf="!logged" type="password" placeholder="Contraseña" [(ngModel)]="password">
-                  <a href="#" *ngIf="!logged" (click)="checkUser()">Iniciar sesión</a>
-                  <h6 *ngIf="!logged">ó</h6>
-                  <p *ngIf="!logged" id="register">No tienes cuenta? <span routerLink="/register" (click)="showingUser=false">Registrate</span></p>
-                  <h5 *ngIf="logged">{{getName()}}</h5>
+                  <div class="notlog" *ngIf="!logged">
+                      <h5 >Iniciar sesión</h5>
+                      <p >Email</p>
+                      <input type="email"  placeholder="Email" [(ngModel)]="userEmail">
+                      <p >Contraseña</p>
+                      <input  type="password" placeholder="Contraseña" [(ngModel)]="password">
+                      <p class="errmsg" *ngIf="unoexist">Por favor registrese en intente nuevamente</p>
+                      <p class="errmsg" *ngIf="err">La contrseña es incorrecta</p>
+                      <a (click)="checkUser()">Iniciar sesión</a>
+                      <h6 >ó</h6>
+                      <p id="register">No tienes cuenta? <span routerLink="/register" (click)="showingUser=false">Registrate</span></p>
+                  </div>
+                  <div class="log" *ngIf="logged">
+                      <h5 >Bienvenido! <b>{{getName()}}</b></h5>
+                      <a (click)="closeSesion()">Cerrar Sesión</a>
+                  </div>
+                  
+
                 </div>
               </div>
           </div>

@@ -1,29 +1,34 @@
 <div class="container">
-    <div class="row">
-        <div class="col-sm-8">
-            <div class="row">
-                <div class="col title">Producto</div>
-                <div class="col title"></div>
-                <div class="col title">Precio</div>
-                <div class="col title">Cantidad</div>
-                <div class="col title">Total</div>
-                <div class="col title">Quitar</div>
+    <div *ngIf="this.products" class="shopcartfil">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col title">Producto</div>
+                    <div class="col title"></div>
+                    <div class="col title">Precio</div>
+                    <div class="col title">Cantidad</div>
+                    <div class="col title">Total</div>
+                    <div class="col title">Quitar</div>
+                </div>
+                <div *ngFor="let product of products; let i = index" class="row">
+                        <div class="col"><img src="{{product.fotoURL}}" alt=""></div>
+                        <div class="col">{{product.Nombre}}</div>
+                        <div class="col">${{getPrice(product?.Precio)}}</div>
+                        <div class="col"><input type="text" pInputText [(ngModel)]="quantity[i]" (ngModelChange)="quantityChange(i)"></div>
+                        <div class="col">${{getPrice(ptotal[i])}}</div>
+                        <div (click)="deleteProduct(i)"class="col"><i class="far fa-trash-alt"></i></div>
+                </div>
             </div>
-            <div *ngFor="let product of products; let i = index" class="row">
-                    <div class="col"><img src="{{product.fotoURL}}" alt=""></div>
-                    <div class="col">{{product.Nombre}}</div>
-                    <div class="col">${{getPrice(product?.Precio)}}</div>
-                    <div class="col"><input type="text" pInputText [(ngModel)]="quantity[i]" (ngModelChange)="quantityChange(i)"></div>
-                    <div class="col">${{getPrice(ptotal[i])}}</div>
-                    <div (click)="deleteProduct(i)"class="col"><i class="far fa-trash-alt"></i></div>
+            <div class="col-sm-4">
+                <p>Subtotal: <a>${{getPrice(subtotal)}}</a></p>
+                <p>Dcto en productos: <a>$0</a></p>
+                <p>Gastos de envio: <a>$8,740</a></p>
+                <p id="total">Total: <a>${{getPrice(subtotal+8740)}}</a></p>
+                <button [routerLink]="['/invoice']">Finalizar Compra</button>
             </div>
         </div>
-        <div class="col-sm-4">
-            <p>Subtotal: <a>${{getPrice(subtotal)}}</a></p>
-            <p>Dcto en productos: <a>$0</a></p>
-            <p>Gastos de envio: <a>$8,740</a></p>
-            <p id="total">Total: <a>${{getPrice(subtotal+8740)}}</a></p>
-            <button [routerLink]="['/invoice']">Finalizar Compra</button>
-        </div>
+    </div>
+    <div *ngIf="!this.products" class="shopcartnotfil">
+        <h1><i class="fas fa-shopping-bag"></i>Su carrito de compras está vacio</h1>
     </div>
 </div>

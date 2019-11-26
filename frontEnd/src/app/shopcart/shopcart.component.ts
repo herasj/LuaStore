@@ -24,7 +24,6 @@ export class ShopcartComponent implements OnInit {
         this.subtotal+=parseInt(item.Precio)*parseInt(this.quantity[index]);
       });
     }
-    console.log(this.products)
   }
 
   quantityChange(i){
@@ -42,6 +41,10 @@ export class ShopcartComponent implements OnInit {
     if (i !== -1) {
         a.splice(i, 1);
         b.splice(i, 1);
+    }
+    if(a.length==0){
+      a=null;
+      b=null;
     }
     localStorage.setItem('cart',JSON.stringify(a));
     localStorage.setItem('cart-meters',JSON.stringify(b));

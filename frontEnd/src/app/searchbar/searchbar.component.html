@@ -11,7 +11,7 @@
         <nav>
             <ul id="list">
                 <li *ngFor="let result of results">
-                    <a routerLink="/search" (click)="setVisibleFalse()" [queryParams]="{name: [result.Nombre]}" class="name">{{result.Nombre}}</a>
+                    <a routerLink="/search" (click)="setVisibleFalse(result.Nombre)" [queryParams]="{name: [result.Nombre]}" class="name">{{result.Nombre}}</a>
                 </li>
             </ul>
         </nav>

@@ -32,4 +32,15 @@
         font-weight: bold;
         margin-bottom: 10px;
     }
+    .shopcartnotfil{
+        color: rgb(179, 179, 179);
+        min-height: 400px;
+        display: flex;
+        h1{
+            margin: auto;
+        }
+        i{
+            margin-right: 15px;
+        }   
+    }
 }
