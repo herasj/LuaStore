@@ -9,8 +9,8 @@
             
             <div class="adding">
                 <p>Metros:</p>
-                <app-meteradder [(meters)]="meters" id="adder" ></app-meteradder>
-                <button class="addCart">Añadir al carrito</button>
+                <app-meteradder [meters]="meters" id="adder" (metersChange)="onMetersChange($event)"></app-meteradder>
+                <button (click)="addToCart()" class="addCart">Añadir al carrito</button>
             </div>
             <div class="details">
                 <p id="title">Caracteristicas</p>

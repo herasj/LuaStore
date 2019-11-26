@@ -15,7 +15,7 @@ export class HttpService {
   }
 
   getSearch(params){
-    return this.http.get(this.API_URL+'product'+this.jsonToQueryString(params));
+    return this.http.get(this.API_URL+'search'+this.jsonToQueryString(params));
   }
 
   getProduct(name){

@@ -1,6 +1,6 @@
 <div class="product" (mouseenter)="setSc(true)" (mouseleave)="setSc(false)">
     <div [routerLink]="['/product',product.Nombre]" class="main">
-        <i *ngIf="sc" (click)="addToCart()" class="fas fa-cart-plus"></i>
+        <i *ngIf="sc" (click)="addToCart();$event.stopPropagation()" class="fas fa-cart-plus"></i>
         <img src={{product?.fotoURL}} alt="">
         <p class="title">{{product?.Nombre}}</p>
         <p class="price">${{getPrice(product?.Precio)}}</p>

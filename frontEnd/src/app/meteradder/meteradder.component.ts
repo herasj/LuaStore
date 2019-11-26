@@ -6,7 +6,6 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef }
   styleUrls: ['./meteradder.component.scss']
 })
 export class MeteradderComponent implements OnInit {
-  @ViewChild("meter",{static: false}) input: ElementRef;
   @Input() meters;
   @Output() metersChange = new EventEmitter<number>();
   
@@ -27,9 +26,13 @@ export class MeteradderComponent implements OnInit {
     
   }
   inc(){
-    this.input.nativeElement.stepUp();
+    this.meters+=0.5;
+    this.eventHandler(this.meters);
   }
   dec(){
-    this.input.nativeElement.stepDown();
+    if(this.meters!=1){
+      this.meters-=0.5;
+      this.eventHandler(this.meters);
+    }
   }
 }
