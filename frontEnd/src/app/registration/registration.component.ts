@@ -32,7 +32,8 @@ export class RegistrationComponent implements OnInit {
         email:this.email,
         pass:this.contrasena,
       };
-      this._http.postRegister(js);
+      localStorage.setItem('userInfo', JSON.stringify(js))
+      console.log(localStorage.getItem('userInfo'));
     }
   }
 }

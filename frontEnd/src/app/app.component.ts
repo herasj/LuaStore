@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
       }
       window.scrollTo(0, 0)
     });
-
+    this.user=JSON.parse(localStorage.getItem('userInfo'));
   }
   
   @HostListener('document:click', ['$event'])
@@ -49,12 +49,13 @@ export class AppComponent implements OnInit {
   checkUser(){
     if(this.userEmail!=null&&this.password!=null){
       let a = JSON.parse(localStorage.getItem('userInfo'));
-      if(a!=null)
+      console.log(a);
+      if(a==null)
         this.unoexist=true;
       else{
-        if(a.user==this.userEmail&&a.password==this.password){
-          this.logged=true;
+        if(a.email==this.userEmail&&a.pass==this.password){
           this.user=a;
+          this.logged=true;
         }else{
           this.err=true;
         }
@@ -65,6 +66,10 @@ export class AppComponent implements OnInit {
   onResize(event){
     if(event.target.innerWidth<768) this.isInMobile=true;
     else this.isInMobile=false;
+  }
+
+  getName(){
+    return this.user.name
   }
   
 }

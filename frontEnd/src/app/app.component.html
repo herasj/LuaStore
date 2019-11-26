@@ -19,7 +19,7 @@
                   <a href="#" *ngIf="!logged" (click)="checkUser()">Iniciar sesión</a>
                   <h6 *ngIf="!logged">ó</h6>
                   <p *ngIf="!logged" id="register">No tienes cuenta? <span routerLink="/register" (click)="showingUser=false">Registrate</span></p>
-                  <h5 *ngIf="logged">{{user?.name}}</h5>
+                  <h5 *ngIf="logged">{{getName()}}</h5>
                 </div>
               </div>
           </div>
