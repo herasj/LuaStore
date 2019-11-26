@@ -98,13 +98,15 @@ module.exports = {
     },
     search: (data)=>{
         let res= data.res;
+        console.log('Buscar Data');
+        console.table(data);
         sql.connect(config, function (err) {
             if (err){console.log(err); res.send(errmsg);}//Mostrar error si existe    
             var request = new sql.Request();
             var query=`SELECT *
             FROM Productos p JOIN Fotos f 
             ON p.productID=f.productID 
-            WHERE p.Nombre like '${data.name}%'`;
+            WHERE p.Nombre like '${data.name}%''`;
             // Aplicar query a la db y guardar en recordset
             request.query(query, function (err, recordset) {
                 if (err) console.log(err) //Si hay error mostrar

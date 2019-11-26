@@ -39,7 +39,7 @@ router.get('/photo', function(req, res, next) {
 
 router.get('/search', function(req, res, next) {
     let data={
-        name:req.query.id,
+        name:req.query.name,
         res:res
     };
     controller.search(data);
