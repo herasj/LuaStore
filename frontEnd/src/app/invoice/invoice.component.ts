@@ -11,12 +11,14 @@ export class InvoiceComponent implements OnInit {
   subtotal: number = 0;
   ptotal=[];
   products;
+  user;
 
   constructor() { }
 
   ngOnInit() {
     this.products=JSON.parse(localStorage.getItem('cart'));
-    this.quantity=JSON.parse(localStorage.getItem('cart-meters'))
+    this.quantity=JSON.parse(localStorage.getItem('cart-meters'));
+    this.user=JSON.parse(localStorage.getItem('userInfo'));
     if(this.products!=null||this.products!=undefined){
       this.products.forEach((item, index) => {
         this.ptotal[index]=item.Precio+this.quantity[index];

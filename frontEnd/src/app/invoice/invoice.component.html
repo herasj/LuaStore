@@ -17,11 +17,12 @@
         <div><a href="mailto:archila@uninorte.edu.co">archila@uninorte.edu.co</a></div>
       </div>
       <div id="project">
-        <div><span>CLIENT</span> Leonard</div>
-        <div><span>ADDRESS</span> 796 Silver Harbour, TX 79273, US</div>
-        <div><span>EMAIL</span> <a href="mailto:john@example.com">john@example.com</a></div>
-        <div><span>DATE</span> August 17, 2015</div>
-        <div><span>DUE DATE</span> September 17, 2015</div>
+        <div><span>CLIENT</span>{{user.name}} {{user.lastname}}</div>
+        <div><span>ADDRESS</span> {{user.address}}</div>
+        <div><span>EMAIL</span> <a href="mailto:john@example.com">{{user.email}}</a></div>
+        <div><span>PHONE</span> {{user.phone}}</div>
+        <div><span>DATE</span> November 26, 2019</div>
+        <div><span>DUE DATE</span> November 26, 2020</div>
       </div>
     </header>
     <main>
@@ -31,7 +32,7 @@
             <th class="service">PRODUCT</th>
             <th class="desc">DESCRIPTION</th>
             <th>PRICE</th>
-            <th>QTY</th>
+            <th>METERS</th>
             <th>TOTAL</th>
           </tr>
         </thead>
