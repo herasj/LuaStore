@@ -26,12 +26,12 @@ export class MeteradderComponent implements OnInit {
     
   }
   inc(){
-    this.meters+=0.5;
+    this.meters+=1;
     this.eventHandler(this.meters);
   }
   dec(){
     if(this.meters!=1){
-      this.meters-=0.5;
+      this.meters-=1;
       this.eventHandler(this.meters);
     }
   }

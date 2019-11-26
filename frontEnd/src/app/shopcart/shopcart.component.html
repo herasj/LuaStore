@@ -4,19 +4,20 @@
             <div class="col-sm-8">
                 <div class="row">
                     <div class="col title">Producto</div>
-                    <div class="col title"></div>
+                    <div class="col title">Nombre</div>
                     <div class="col title">Precio</div>
-                    <div class="col title">Cantidad</div>
+                    <div class="col title">Metros</div>
                     <div class="col title">Total</div>
-                    <div class="col title">Quitar</div>
+                    <div class="col title" style="text-align: center;">Quitar</div>
                 </div>
-                <div *ngFor="let product of products; let i = index" class="row">
+                <div *ngFor="let product of products; let i = index" class="row" style="margin-bottom: 15px;">
                         <div class="col"><img src="{{product.fotoURL}}" alt=""></div>
-                        <div class="col">{{product.Nombre}}</div>
-                        <div class="col">${{getPrice(product?.Precio)}}</div>
-                        <div class="col"><input type="text" pInputText [(ngModel)]="quantity[i]" (ngModelChange)="quantityChange(i)"></div>
-                        <div class="col">${{getPrice(ptotal[i])}}</div>
-                        <div (click)="deleteProduct(i)"class="col"><i class="far fa-trash-alt"></i></div>
+                        <div class="col" style="margin:auto">{{product.Nombre}}</div>
+                        <div class="col" style="margin:auto">${{getPrice(product?.Precio)}}</div>
+                        <!-- <div class="col"><input type="text" pInputText [(ngModel)]="quantity[i]" (ngModelChange)="quantityChange(i)"></div> -->
+                        <div class="col" style="margin:auto"><app-meteradder [meters]="quantity[i]" id="adder" (metersChange)="onMetersChange($event,i)"></app-meteradder></div>
+                        <div class="col" style="margin:auto">${{getPrice(ptotal[i])}}</div>
+                        <div (click)="deleteProduct(i)" class="col" style="margin:auto;text-align: center;"><i class="far fa-trash-alt"></i></div>
                 </div>
             </div>
             <div class="col-sm-4">
